@@ -15,5 +15,5 @@
   const header = document.getElementById('header')
 
   // Cargar header y footer dinámicamente
-  loadContent('header', '/dynamic/header.html');
+  loadContent('header', 'dynamic/header.html');
   //loadContent('footer', './dynamic/footer.html');
