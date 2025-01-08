@@ -1,0 +1,152 @@
+
+/* Estilo base para centrar las imágenes */
+.card-body .row .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body .row .col.col-text {
+  background-color: #4085ff;
+  border-radius: 0.25rem;
+}
+
+
+/* Estilo base para centrar las imágenes */
+.card-body .row .col .card-text {
+  color: white;
+  text-align: justify;
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+}
+
+.card-body .row .col .card-text .card-strong-text {
+  font-size: 1.9rem;
+}
+
+/* Intercalar imágenes: primera columna con imagen, segunda columna con texto */
+.card-body:nth-of-type(odd) .row .col:nth-child(1),
+.card-body:nth-of-type(even) .row .col:nth-child(2) {
+  display: flex;
+  /* Aseguramos que las imágenes se mantengan visibles */
+}
+
+@media (max-width: 768px) {
+  /* Ocultar las imágenes en dispositivos móviles */
+  .card-body .row .col.col-img {
+    display: none !important;
+  }
+
+  /* Centrar texto en dispositivos móviles */
+  .card-body .row .col.col-text {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+/* Asegurar imágenes responsivas */
+.card-body .row .col.col-img {
+  max-width: 35rem;
+  height: auto;
+  /* Mantener proporciones */
+}
+
+/* Estilo para las tarjetas de contactos */
+#contactos .card-group {
+  display: flex;
+  gap: 1rem; /* Espacio entre las tarjetas */
+  font-size: 1.25rem;
+}
+
+#contactos .card {
+  border: none; /* Opcional: Eliminar bordes de las tarjetas */
+  border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+#contactos  .card-group .card:hover {
+  transition: all 0.3s ease; /* Agrega una transición suave */
+  background-color: #4085ff;
+  color: white;
+}
+
+#contactos .card-img-top {
+  border: none;
+  border-top-left-radius: 0.5rem; /* Ajusta bordes redondeados de la imagen */
+  border-top-right-radius: 0.5rem;
+}
+
+
+
+#contactos .card-body {
+  text-align: center; /* Centra el contenido del texto */
+}
+
+/* Responsividad: Asegurar que las tarjetas se adapten a dispositivos móviles */
+@media (max-width: 768px) {
+  #contactos .card-group {
+    flex-direction: column; /* Cambia a disposición vertical */
+    gap: 1.5rem; /* Mayor separación en vertical */
+  }
+}
+
+#metodologia .card-text li {
+  text-align: justify;
+  font-size: 1.25rem; /* Aumenta el tamaño del texto */
+}
+
+#metodologia .card-text .list-group-item:nth-child(odd) {
+  background-color: #4085ff; /* Azul oscuro */
+  color: white; /* Texto blanco para contraste */
+}
+
+#metodologia .card-text .list-group-item:nth-child(even) {
+  background-color: #e3f2fd; /* Azul claro */
+  color: black; /* Texto negro para contraste */
+}
+
+#requerimientos .card-body .row {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1rem; /* Ajusta el tamaño del texto para mejorar la legibilidad */
+}
+
+#requerimientos .card-body .col.col-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  color: white; /* Color oscuro para el texto */
+}
+
+#requerimientos .card-strong-text {
+  font-size: 2rem; /* Aumenta el tamaño del texto del título */
+}
+
+#requerimientos .card-text {
+  color: white; /* Color gris oscuro para el texto del párrafo */
+  font-size: 1.3rem; /* Ajuste al tamaño de fuente del párrafo */
+}
+
+#requerimientos ul {
+  list-style-type: disc; /* Asegura que los elementos de lista tengan puntos */
+  padding-left: 1.5rem; /* Ajuste de espacio a la izquierda para la lista */
+}
+
+#requerimientos ul li {
+  font-size: 1.3rem;
+  margin-bottom: .5rem; /* Espacio entre los elementos de la lista */
+}
+
+
+
+
+
+#contactos .offcanvas-header {
+  background-color: #e7f0ff;
+  text-align: justify;
+}
+
+#contactos .offcanvas-body {
+  background-color: #e7f0ff;
+  text-align: justify;
+}

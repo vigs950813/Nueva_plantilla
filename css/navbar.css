@@ -1,0 +1,119 @@
+/* CSS para centrar los enlaces del navbar */
+nav.navbar {
+    font-weight: bold;
+    background-color: #4085ff; /* Asegura que el color de fondo sea consistente */
+    font-size: 1.45rem; /* Usar rem para el tamaño de la fuente */
+    justify-content: center;
+    
+}
+
+/* Centrar y estilizar los enlaces */
+nav .navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+nav .navbar-toggler{
+    background-color: #b7d1ff;
+}
+
+nav .navbar-toggler:hover{
+    border-color: #002470;
+    border-style: solid;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+nav .navbar-brand {
+    font-size: 1.125rem; /* Cambiar a rem */
+    color: black; /* Cambia el color de la marca si es necesario */
+}
+
+/* Espaciado entre los elementos del navbar */
+nav .nav-item {
+    margin-left: 1.25rem; /* Cambiar a rem */
+    margin-right: 1.25rem; /* Cambiar a rem */
+}
+
+/* Espaciado entre los elementos del navbar */
+nav .nav-item.home{
+    margin-left: 1.25rem; /* Cambiar a rem */
+    margin-right: 1.25rem; /* Cambiar a rem */
+    font-size: 1.25rem;;
+}
+
+nav .nav-link {
+    color: white; /* Cambia el color de los enlaces al negro */
+    transition: all 0.3s ease; /* Agrega una transición suave */
+    padding: 0.5rem 1rem; /* Agrega un poco de relleno a los enlaces */
+    border-radius: 0.25rem; /* Bordes redondeados para un estilo más suave */
+}
+
+/* Cambiar fondo cuando el mouse pasa sobre el enlace */
+nav .nav-link:hover {
+    background-color: #00389f; /* Fondo oscuro */
+    color: white; /* Cambiar color de texto a blanco */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+/* Animación para el estado activo */
+nav .nav-link:active {
+    background-color: #002470; /* Fondo aún más oscuro al hacer clic */
+    color: white; /* Mantener el color de texto blanco */
+    font-weight: bold; /* Opcional: agrega énfasis al texto */
+}
+
+/* Estilo para los dropdowns */
+nav .dropdown-menu {
+    font-size: 1rem;;
+    background-color: #a0c2ff;
+}
+
+nav .dropdown-item {
+    font-weight: bold;
+    background-color: #dbe8ff;
+}
+
+nav .dropdown-menu .dropdown-item:hover {
+    color: white;
+    background-color: #4085ff;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Suaviza el cambio de color */
+}
+
+nav .dropdown-menu .dropdown-item:active {
+    color: white;
+    background-color: #3874df;
+    font-size: 0.8rem; /* Cambiar a rem */
+    font-weight: bold;
+}
+
+/* Estilo para las imágenes del navbar */
+.logo-navbar {
+    max-height: 10rem; /* Cambiar a rem */
+    height: auto;
+    width: auto;
+    padding: 0.3125rem; /* Cambiar a rem */
+}
+
+/* Ocultar las imágenes en pantallas pequeñas */
+@media (max-width: 991.98px) {
+    .logo-navbar {
+        display: none;
+    }
+}
+
+/* Asegurar responsividad del navbar */
+.navbar-collapse {
+    justify-content: center;
+}
+
+.nav-item {
+    margin: 0 0.625rem; /* Cambiar a rem */
+}
+
+nav h4.text-center{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: white;
+}
