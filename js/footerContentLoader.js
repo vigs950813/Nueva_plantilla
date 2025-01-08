@@ -16,4 +16,4 @@
 
   // Cargar header y footer dinámicamente
   //loadContent('header', './dynamic/header.html');
-  loadContent('footer', 'dynamic/footer.html');
+  loadContent('footer', '../dynamic/footer.html');

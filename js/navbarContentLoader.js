@@ -15,7 +15,7 @@
   const navbar = document.getElementById('navbar')
 
   // Cargar header y foote rdinámicamente
-  loadContent('navbar', 'dynamic/navbarContent.html');
+  loadContent('navbar', '../dynamic/navbarContent.html');
   //loadContent('footer', './dynamic/footer.html');
 
   
