@@ -1,0 +1,121 @@
+/* Estilo base para centrar las imágenes */
+#unidad-4 .card-body .row .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#unidad-4 .card-body .row .col.col-text {
+    background-color: #4085ff;
+    /* border-radius: 0.25rem; */
+}
+
+#unidad-4 .card-body .row .col .card-text {
+    color: white;
+    text-align: justify;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+}
+
+#unidad-4 .card-body .row .col .card-text .card-strong-text:first-of-type {
+    font-size: 1.9rem;
+}
+
+#unidad-4 .card-body .row .col .card-text .card-strong-text:nth-of-type(2) {
+    font-size: 1.5rem; /* Tamaño menor para Unidad de competencia */
+}
+
+#unidad-4 .card-body .row .col.col-img {
+    max-width: 35rem;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    /* Ocultar las imágenes en dispositivos móviles */
+    #unidad-4 .card-body .row .col.col-img {
+        display: none !important;
+    }
+
+    /* Centrar texto en dispositivos móviles */
+    #unidad-4 .card-body .row .col.col-text {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+
+#temario {
+  color: white;
+  background-color: #4085ff; /* Fondo general del temario */
+  padding: 20px;
+}
+
+/* General styles for list group items */
+#temario .accordion-body {
+  
+  background-color: #b7d1ff;
+}
+
+
+
+/* General styles for list group items */
+#temario .list-group-item {
+  
+  background-color: #4085ff;
+}
+  
+/* General styles for list group items */
+#temario .list-group-item a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  background-color: #4085ff; /* Color base para los enlaces */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Alternar colores entre azul oscuro (#4085ff) y claro (#a0c2ff) */
+#temario .list-group-item:nth-child(odd) a {
+  background-color: #4085ff; /* Azul oscuro */
+}
+
+#temario .list-group-item:nth-child(even) a {
+  background-color: #4085ff; /* Azul oscuro */
+}
+
+/* Hover effect */
+#temario .list-group-item a:hover {
+  background-color: #00509E; /* Azul más brillante */
+  transform: scale(1.05); /* Agrandar ligeramente al pasar el cursor */
+  text-decoration: underline; /* Subrayado para mayor retroalimentación */
+  border-radius: 0.5rem;
+}
+
+/* Clase para mantener el estado activo */
+#temario .list-group-item a.active {
+  background-color: #003f7f; /* Azul oscuro para indicar que está activo */
+  color: white;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Apariencia de presión */
+  border-radius: 0.5rem;
+}
+
+
+/* Styling the collapsed accordion buttons */
+#temario .accordion-button {
+  background-color: #4085ff; /* Azul oscuro para los botones */
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#temario .accordion-button:hover {
+  background-color: #a0c2ff; /* Azul claro en hover */
+  color: #FFFFFF;
+}
+
+#temario .accordion-button:active {
+  background-color: #003f7f; /* Azul más oscuro para el estado activo */
+  transform: scale(0.97); /* Reducir ligeramente al hacer clic */
+}

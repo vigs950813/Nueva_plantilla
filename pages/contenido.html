@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Contenido</title>
   <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/cardContent.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
@@ -19,8 +20,137 @@
 
   <main>
 
-    <h3>Saludos</h3>
+    <section id="unidad-4">
+      <div class="card" style="border: none;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col col-text">
+              <p class="card-text">
+                <strong class="card-strong-text">Unidad IV: Sistema de archivos</strong>
+                <br>
+                <br>
+                <strong class="card-strong-text">Unidad de competencia:</strong>
+                Implementa la organización del sistema de archivos a partir de su estructura, asignación de espacio,
+                administración y optimización.
+              </p>
+            </div>
+            <div class="col col-img"
+              style="background: #ffffff url(../images/library_1.png) center center/cover no-repeat padding-box;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="temario">
+      <h3 class="text-center">Temario</h3>
+      <h4>Selecciona una opción</h4>
+      <div class="accordion accordion-flush" id="accordionExample">
+        <!-- Acordeón 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+              <li class="list-group-item"><a href="#" onclick="loadContent('4-1-estructura-del-sistema-de-archivos.html', this)">4.1 Estructura del sistema de archivos</a></li>
+            </button>
+          </h2>
+          <div id="flush-collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <ul class="list-group list-group-flush">
+                
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-1-1-capa-del-sistema-de-archivos.html', this)">4.1.1 Capa del sistema de archivos</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('actividad-1.html', this)">Actividad 1</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Acordeón 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
+              <li class="list-group-item"><a href="#" onclick="loadContent('4-2-implementacion.html', this)">4.2 Implementación</a></li>
+            </button>
+          </h2>
+          <div id="flush-collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-2-1-de-archivos.html', this)">4.2.1 De archivos</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-2-2-de-directorios.html', this)">4.2.2 De directorios</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-2-3-archivos-compartidos.html', this)">4.2.3 Archivos compartidos</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('actividad-2.html', this)">Actividad 2</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Acordeón 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+              <li class="list-group-item"><a href="#" onclick="loadContent('4-3-metodos-de-asignacion-de-espacio.html', this)">4.3 Métodos de asignación de espacio</a></li>
+            </button>
+          </h2>
+          <div id="flush-collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-3-1-contigua.html', this)">4.3.1 Contigua</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-3-2-ligada.html', this)">4.3.2 Ligada</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-3-3-indexada.html', this)">4.3.3 Indexada</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-3-4-administracion-del-espacio-en-disco.html', this)">4.3.4 Administración del espacio en disco</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('actividad-3.html', this)">Actividad 3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Acordeón 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+              <li class="list-group-item"><a href="#" onclick="loadContent('4-4-sistemas-de-archivos-estructurados.html', this)">4.4 Sistemas de archivos estructurados</a></li>
+            </button>
+          </h2>
+          <div id="flush-collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <ul class="list-group list-group-flush">                
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-4-1-por-bitacoras.html', this)">4.4.1 Por bitácoras</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-4-2-por-diario.html', this)">4.4.2 Por diario</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('actividad-4.html', this)">Actividad 4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Acordeón 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+              <li class="list-group-item"><a href="#" onclick="loadContent('4-5-optimizacion-del-sistema-de-archivos.html', this)">4.5 Optimización del sistema de archivos</a></li>
+            </button>
+          </h2>
+          <div id="flush-collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <ul class="list-group list-group-flush">            
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-5-1-recuperacion.html', this)">4.5.1 Recuperación</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-5-2-consistencia.html', this)">4.5.2 Consistencia</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('4-5-3-rendimiento.html', this)">4.5.3 Rendimiento</a></li>
+                <li class="list-group-item"><a href="#" onclick="loadContent('actividad-5.html', this)">Actividad 5</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     
+    
+    
+    <section id="contenido-dinamico">
+      <!-- Este es el lugar donde se cargará el contenido dinámicamente -->
+      <div id="contenido-cargado">
+      </div>
+    </section>
+
+
+
+
 
   </main>
 
@@ -33,7 +163,7 @@
 
 </body>
 <script src="../js/navbarContentLoader.js"></script>
-<script src="../js/footerContentLoader.js"></script>
+<script src="../js/footerLoader.js"></script>
 
 <!-- <script src="js/indexScroll.js"></script> -->
 

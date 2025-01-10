@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>4.4.1 Por bitácoras</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS-->
+</head>
+
+<body>
+    <!-- Page content -->
+
+    <main>
+        <section>
+            <div class="card">
+                <h5 class="card-header">4.4.1 Por bitácoras</h5>
+                <div class="card-body">
+
+                    <p class="card-text">
+                        Si bien los sistemas de archivos basados en registros son una propuesta interesante, no se
+                        emplean de manera extendida, en parte debido a su significativa incompatibilidad con los
+                        sistemas de archivos actuales. No obstante, uno de los conceptos implícitos en ellos, la
+                        resistencia a fallas, se puede incorporar fácilmente a sistemas de archivos más tradicionales.
+                    </p>
+
+                    <p class="card-text">
+                        La idea es guardar la identificación de las acciones en donde se realicen antes de ejecutarlas.
+                        Así, si llegara a tener inconvenientes antes de completar la tarea prevista, al volver a
+                        inicializar el sistema, podrá visualizar su registro para identificar lo que estaba sucediendo
+                        en el momento del inconveniente y con ello finalizar la acción requerida.
+
+                    </p>
+
+                    <p class="card-text">
+                        Estos sistemas de archivos, denominados registro (Sistema de archivos de diario
+                        , JFS), se utilizan en el momento. Es por ello por lo que NTFS (Sistema de archivos de nueva
+                        tecnología) de Microsoft, considerando también ext3 y ReiserFS de Linux, son ejemplos de
+                        sistemas con registro.
+
+                    </p>
+
+                    <p class="card-text">
+                        Para comprender la importancia del problema, identifique la ejecución de una acción sencilla que
+                        ocurre frecuentemente al eliminar un archivo. Esta operación (en UNIX) implica tres pasos:
+
+                    </p>
+
+                    <ol class="card-text" type="1">
+                        <li>Eliminar el archivo de su ubicación dentro de la estructura</li>
+                        <li>Soltar el nodo-i y transferirlo a la protección de nodos-i disponibles
+                        </li>
+                        <li>Restituir todos los bloques de disco a la protección de agrupación de dispositivo libres
+                        </li>
+                    </ol>
+
+                    <p class="card-text">
+                        En Windows. Cuando no existe inconvenientes en el orden en que se ejecutan estos pasos no es
+                        relevante; pero en cuando existe inconvenientes, sí lo es. Por lo que si se termina el primer
+                        paso y puede existir que posteriormente presente algún inconveniente.
+
+                    </p>
+
+                    <p class="card-text">
+                        El nodo-i y la organización de los archivos no permitirán que se pueda acceder a ningún tipo de
+                        fichero, por lo que no habrá la posibilidad para ser reasignados; simplemente quedarán en una
+                        especie de espacio, reduciendo la eficiencia del sistema.
+
+                    </p>
+
+                    <p class="card-text">
+                        <strong>Figura 13.</strong>
+                    </p>
+                    <p class="card-text">
+                        <i>Sistema de archivos NTFS presente en Windows 10.</i>
+                    </p>
+                    
+
+                    <div class="text-center">
+                        <img src="../images/figura8.png" alt="Figura 13" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Page content -->
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- Core theme JS-->
+</body>
+
+</html>
