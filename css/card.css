@@ -100,8 +100,8 @@
 }
 
 #metodologia .card-text .list-group-item:nth-child(even) {
-  background-color: #e3f2fd; /* Azul claro */
-  color: black; /* Texto negro para contraste */
+  background-color: #3874df; /* Azul claro */
+  color: white; /* Texto negro para contraste */
 }
 
 #requerimientos .card-body .row {
