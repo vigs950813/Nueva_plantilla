@@ -21,28 +21,28 @@
   <!-- Page content -->
 
   <main>
-    <section>
+    <section id="pageContentCard">
       <div class="card">
-          <h5 class="card-header">Introducción</h5>
+        <h5 class="card-header">Introducción</h5>
 
-          <div class="card-body">
+        <div class="card-body">
 
-              <p class="card-text">En esta unidad temática, exploraremos la funcionalidad de la organización de
-                  archivos. Este sistema es esencial para estructurar los datos, permitiendo a los sistemas
-                  operativos controlar cómo se resguarda y recupera la información, así como la organización de
-                  archivos y carpetas para asegurar una adecuada asignación del espacio en el dispositivo.</p>
+          <p class="card-text">En esta unidad temática, exploraremos la funcionalidad de la organización de
+            archivos. Este sistema es esencial para estructurar los datos, permitiendo a los sistemas
+            operativos controlar cómo se resguarda y recupera la información, así como la organización de
+            archivos y carpetas para asegurar una adecuada asignación del espacio en el dispositivo.</p>
 
-              <p class="card-text">Los sistemas de archivos facilitan la organización de datos en una estructura
-                  jerárquica, permitiendo crear, mover, modificar y eliminar archivos y carpetas. Son esenciales
-                  para optimizar el rendimiento, garantizando la totalidad de la información, simplificando la
-                  administración y copia de validación de todos los datos.</p>
+          <p class="card-text">Los sistemas de archivos facilitan la organización de datos en una estructura
+            jerárquica, permitiendo crear, mover, modificar y eliminar archivos y carpetas. Son esenciales
+            para optimizar el rendimiento, garantizando la totalidad de la información, simplificando la
+            administración y copia de validación de todos los datos.</p>
 
-              <p class="card-text">Es crucial que entiendas la importancia de este aprendizaje para tu docente,
-                  quien te facilitará y guiará a lo largo de esta unidad. Por ello, presta atención a sus
-                  indicaciones.</p>
+          <p class="card-text">Es crucial que entiendas la importancia de este aprendizaje para tu docente,
+            quien te facilitará y guiará a lo largo de esta unidad. Por ello, presta atención a sus
+            indicaciones.</p>
 
 
-              <!-- <p class="card-text">
+          <!-- <p class="card-text">
                   En esta unidad temática, exploraremos la funcionalidad de un sistema de archivos. Este sistema es esencial para estructurar los datos, permitiendo a los
                   sistemas operativos controlar cómo se resguarda y recupera la información, así como la organización
                   de archivos y carpetas para asegurar una adecuada asignación del espacio en el dispositivo.
@@ -58,14 +58,9 @@
                   y guiará a lo largo de esta unidad. Por ello, presta atención a sus indicaciones.
               </p> -->
 
-          </div>
+        </div>
 
       </div>
-
-
-
-  </section>
-    <section>
       <div class="card">
         <h5 class="card-header">4.4 Sistemas de archivos estructurados</h5>
         <div class="card-body">
@@ -80,68 +75,32 @@
             su categoría.</p>
 
 
-          <div class="accordion" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                  aria-controls="panelsStayOpen-collapseOne">
-                  Sistemas de archivos de bitácora
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                <div class="accordion-body">
-                  <p class="card-text">
-                    Son archivos organizados que no mantienen una comprobación de procedimientos llevadas. Los cambios
-                    se aplican directamente al sistema de archivos, lo que hace que la mejoría sea visiblemente
-                    identificada por si hubiese algún inconveniente y requiera una revisión más detallada.
+          <p class="card-text"><strong>Sistemas de archivos de bitácora:</strong> Son archivos organizados que no
+            mantienen una comprobación de procedimientos llevadas. Los cambios se aplican directamente al sistema de
+            archivos, lo que hace que la mejoría sea visiblemente identificada por si hubiese algún inconveniente y
+            requiera una revisión más detallada.</p>
 
-                  </p>
-                  <ul class="card-text">
-                    <li><strong>FAT32</strong></li>Sistema de archivos compatible con múltiples sistemas operativos y
-                    adecuado para unidades extraíbles
+          <p class="card-text"><strong>FAT32:</strong> Sistema de archivos compatible con múltiples sistemas operativos
+            y adecuado para unidades extraíbles.</p>
+          <p class="card-text"><strong>exFAT:</strong> Optimizado para memorias, permite archivos grandes y es
+            compatible en varios dispositivos.</p>
+          <p class="card-text"><strong>ext2:</strong> Sistema de archivos de <a href="glosario.html"
+              target="_blank">Linux</a> sin <i>journaling</i>, utilizado en entornos donde no es necesario el registro
+            en diario.</p>
 
-                    <li><strong>exFAT</a></strong></li>Optimizado para memorias, permite archivos grandes y es
-                    compatible en varios dispositivos
-                    <li><strong>ext2</a></strong></li>Sistema de archivos de <a href="glosario.html"
-                      target="_blank">Linux</a> sin <i>journaling</i>, utilizado en entornos donde no es necesario el
-                    registro en diario
-                  </ul>
+          <p class="card-text"><strong>Sistemas de archivos de diario:</strong> Estos sistemas mantienen un registro
+            (diario) de las operaciones, especialmente de los metadatos. En caso de fallo, el sistema puede utilizar el
+            diario para restuaruar el estado coherente del sistema de archivos de manera rápida y confiable.</p>
 
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                  aria-controls="panelsStayOpen-collapseTwo">
-                  Sistemas de archivos de diario
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <p class="card-text">
-                    Estos sistemas mantienen un registro (diario) de las
-                    operaciones, especialmente de los metadatos.
-                    En caso de fallo, el sistema puede utilizar el diario para restuaruar el estado coherente del
-                    sistema de archivos de
-                    manera rápida y confiable.
-                  </p>
-                </div>
-                <ul class="card-text">
-                  <li><strong>NTFS</strong></li>Sistema de archivos de Windows con soporte para journaling y permisos
-                  avanzados
-                  <li><strong>ext3</strong></li>Versión de ext2 con journaling, ampliamente utilizada para manejar
-                  archivos grandes
-                  <li><strong>ReiserFS</strong></li>Sistema de archivos de Linux optimizado para manejar grandes
-                  cantidades de archivos pequeños
-                  <li><strong>JFS</strong></li>Sistema de archivos de IBM para Linux, optimizado para servidores con
-                  journaling completo
-                </ul>
-              </div>
-            </div>
-          </div>
+          <p class="card-text"><strong>NTFS:</strong> Sistema de archivos de Windows con soporte para journaling y
+            permisos avanzados.</p>
+          <p class="card-text"><strong>ext3:</strong> Versión de ext2 con journaling, ampliamente utilizada para manejar
+            archivos grandes.</p>
+          <p class="card-text"><strong>ReiserFS:</strong> Sistema de archivos de Linux optimizado para manejar grandes
+            cantidades de archivos pequeños.</p>
+          <p class="card-text"><strong>JFS:</strong> Sistema de archivos de IBM para Linux, optimizado para servidores
+            con journaling completo.</p>
+
 
           <p class="card-text">
             A continuación, se presenta el siguiente material audiovisual para extender más información sobre el tema.
@@ -159,7 +118,6 @@
           </div>
         </div>
       </div>
-
     </section>
   </main>
 

@@ -1,0 +1,63 @@
+/* Estilos para la sección con id generalCard */
+#generalCard {
+    font-size: 18px; /* Aumenta el tamaño de la fuente */
+    color: #333; /* Color del texto */
+    background-color: #dfdfdf; /* Fondo general de la sección */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un diseño moderno */
+}
+
+/* Estilos para el título de la card */
+#generalCard .card-header {
+    background-color: #0066cc; /* Fondo azul para el título */
+    color: #ffffff; /* Texto en blanco */
+    font-size: 22px; /* Tamaño más grande para el título */
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #005bb5; /* Ligeramente más oscuro para contraste */
+    padding: 10px;
+}
+
+/* Estilos para el cuerpo de la card */
+#generalCard .card-body {
+    background-color: #e7e7e7; /* Fondo general de la sección */
+    border: 1px solid #ddd; /* Borde suave */
+    padding: 20px;
+}
+
+/* Estilos para el texto dentro de la sección */
+#generalCard .card-text {
+    line-height: 1.6; /* Mejora la legibilidad */
+    color: #555; /* Color más oscuro para el texto */
+}
+
+/* Estilos para el botón dentro de la sección */
+#generalCard .btn-primary {
+    background-color: #0066cc; /* Color principal del botón */
+    border-color: #005bb5;
+    font-size: 20px; /* Tamaño más grande del texto */
+    font-weight: bold;
+    padding: 12px 16px;
+    transition: all 0.3s ease-in-out; /* Suavidad en las transiciones */
+}
+
+/* Hover y focus para el botón */
+#generalCard .btn-primary:hover {
+    background-color: #005bb5; /* Color más oscuro al pasar el cursor */
+    border-color: #004a94;
+}
+
+#generalCard .btn-primary:focus {
+    box-shadow: 0 0 5px #005bb5; /* Añade un resplandor */
+}
+
+/* Opciones adicionales para mejorar el diseño móvil */
+@media (max-width: 768px) {
+    #generalCard {
+        font-size: 16px; /* Ajusta el tamaño en dispositivos pequeños */
+    }
+
+    #generalCard .btn-primary {
+        font-size: 18px; /* Texto más pequeño para botones en pantallas reducidas */
+    }
+}

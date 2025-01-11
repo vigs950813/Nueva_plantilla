@@ -51,6 +51,11 @@
   /* Mantener proporciones */
 }
 
+
+#contactos .card{
+  background-color: #e7e7e7;
+}
+
 /* Estilo para las tarjetas de contactos */
 #contactos .card-group {
   display: flex;
@@ -89,6 +94,10 @@
   }
 }
 
+#metodologia .card{
+  background-color: #e7e7e7;
+}
+
 #metodologia .card-text li {
   text-align: justify;
   font-size: 1.25rem; /* Aumenta el tamaño del texto */
@@ -102,6 +111,10 @@
 #metodologia .card-text .list-group-item:nth-child(even) {
   background-color: #3874df; /* Azul claro */
   color: white; /* Texto negro para contraste */
+}
+
+#requerimientos .card{
+  background-color: #e7e7e7;
 }
 
 #requerimientos .card-body .row {
