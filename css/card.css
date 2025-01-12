@@ -1,165 +1,153 @@
 
-/* Estilo base para centrar las imágenes */
-.card-body .row .col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+#bienvenida .card-body{
+  background-color: #f7f7f7; /* Fondo general de la sección */
 }
 
-.card-body .row .col.col-text {
-  background-color: #4085ff;
-  border-radius: 0.25rem;
+#bienvenida .card-text {
+  font-size: 1.2rem; /* Incrementa el tamaño de la letra */
+  text-align: justify; /* Justifica el texto */
 }
 
-
-/* Estilo base para centrar las imágenes */
-.card-body .row .col .card-text {
+#bienvenida  .card-title.text-center {
   color: white;
-  text-align: justify;
-  font-size: 1.3rem;
-  line-height: 2.5rem;
+  font-weight: bold;
+  background-color: #0066cc; /* Fondo azul para el título */
+  font-size: 1.75rem; /* Incrementa el tamaño de la letra del título */
 }
 
-.card-body .row .col .card-text .card-strong-text {
-  font-size: 1.9rem;
+#intencion-educativa{
+  margin-top: 1rem;
 }
 
-/* Intercalar imágenes: primera columna con imagen, segunda columna con texto */
-.card-body:nth-of-type(odd) .row .col:nth-child(1),
-.card-body:nth-of-type(even) .row .col:nth-child(2) {
-  display: flex;
-  /* Aseguramos que las imágenes se mantengan visibles */
+#intencion-educativa .card-body{
+  background-color: #f7f7f7; /* Fondo general de la sección */
 }
 
-@media (max-width: 768px) {
-  /* Ocultar las imágenes en dispositivos móviles */
-  .card-body .row .col.col-img {
-    display: none !important;
-  }
-
-  /* Centrar texto en dispositivos móviles */
-  .card-body .row .col.col-text {
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
+#intencion-educativa .card-text {
+  font-size: 1.2rem; /* Incrementa el tamaño de la letra */
+  text-align: justify; /* Justifica el texto */
 }
 
-/* Asegurar imágenes responsivas */
-.card-body .row .col.col-img {
-  max-width: 35rem;
-  height: auto;
-  /* Mantener proporciones */
+#intencion-educativa .card-title.text-center {
+  color: white;
+  font-weight: bold;
+  background-color: #0066cc; /* Fondo azul para el título */
+  font-size: 1.75rem; /* Incrementa el tamaño de la letra del título */
 }
 
-
-#contactos .card{
-  background-color: #e7e7e7;
+#proposito-de-la-unidad-de-aprendizaje{
+  margin-top: 1rem;
 }
 
-/* Estilo para las tarjetas de contactos */
-#contactos .card-group {
-  display: flex;
-  gap: 1rem; /* Espacio entre las tarjetas */
-  font-size: 1.25rem;
+#proposito-de-la-unidad-de-aprendizaje .card-body{
+  background-color: #f7f7f7; /* Fondo general de la sección */
 }
+
+#proposito-de-la-unidad-de-aprendizaje .card-text {
+  font-size: 1.2rem; /* Incrementa el tamaño de la letra */
+  text-align: justify; /* Justifica el texto */
+}
+
+#proposito-de-la-unidad-de-aprendizaje .card-title.text-center {
+  color: white;
+  font-weight: bold;
+  background-color: #0066cc; /* Fondo azul para el título */
+  font-size: 1.75rem; /* Incrementa el tamaño de la letra del título */
+}
+
+#metodologia{
+  margin-top: 1rem;
+}
+
+#metodologia .card-body {
+  background-color: #f7f7f7; /* Fondo general de la sección */
+}
+
+#metodologia .card-text {
+  font-size: 1.2rem; /* Incrementa el tamaño de la letra */
+  text-align: justify; /* Justifica el texto */
+}
+
+#metodologia .card-title {
+  font-size: 1.5rem; /* Incrementa el tamaño de la letra del título */
+}
+
+#metodologia .card-title.text-center {
+  color: white;
+  font-weight: bold;
+  background-color: #0066cc; /* Fondo azul para el título */
+  font-size: 1.75rem; /* Incrementa el tamaño de la letra del título */
+}
+
+#metodologia .list-group-item {
+  background-color: #f7f7f7; /* Fondo general de la sección */
+  font-size: 1.2rem; /* Incrementa el tamaño de la letra */
+  text-align: justify; /* Justifica el texto */
+}
+
+#requerimientos{
+  margin-top: 1rem;
+}
+
+#requerimientos .card-body {
+  background-color: #f7f7f7; /* Fondo general de la sección */
+}
+
+#requerimientos .card-title.text-center {
+  color: white;
+  font-weight: bold;
+  background-color: #0066cc; /* Fondo azul para el título */
+  font-size: 1.5rem; /* Incrementa el tamaño de la letra del título */
+}
+
+#requerimientos .list-group-item {
+  background-color: #f7f7f7; /* Fondo general de la sección */
+  font-size: 1.2rem; /* Incrementa el tamaño de la letra */
+  text-align: justify; /* Justifica el texto */
+}
+
+#contactos{
+  margin-top: 1rem;
+}
+
 
 #contactos .card {
-  border: none; /* Opcional: Eliminar bordes de las tarjetas */
-  border-radius: 0.5rem; /* Bordes redondeados */
+
+  background-color: #f7f7f7; /* Fondo general de la sección */
+}
+#contactos .card-body {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  background-color: #f7f7f7; /* Fondo general de la sección */
 }
 
-#contactos  .card-group .card:hover {
-  transition: all 0.3s ease; /* Agrega una transición suave */
-  background-color: #4085ff;
+#contactos .card-title.text-center {
+  color: white;
+  font-weight: bold;
+  background-color: #0066cc; /* Fondo azul para el título */
+  font-size: 1.5rem; /* Incrementa el tamaño de la letra del título */
+}
+
+#contactos .card-group .card {
+  transition: transform 0.2s; /* Efecto de transición para el hover */
+}
+
+#contactos .card-group .card .card-body:hover {
+  transition: background-color 0.2s;
+  background-color: #5894ff;
   color: white;
 }
 
-#contactos .card-img-top {
-  border: none;
-  border-top-left-radius: 0.5rem; /* Ajusta bordes redondeados de la imagen */
-  border-top-right-radius: 0.5rem;
+#contactos .card-title {
+  font-size: 1.2rem; /* Incrementa el tamaño de la letra */
+  text-align: center; /* Centra el texto del título */
+}
+
+#contactos .card-text {
+  font-size: 1rem; /* Incrementa el tamaño de la letra */
+  text-align: center; /* Centra el texto */
 }
 
 
-
-#contactos .card-body {
-  text-align: center; /* Centra el contenido del texto */
-}
-
-/* Responsividad: Asegurar que las tarjetas se adapten a dispositivos móviles */
-@media (max-width: 768px) {
-  #contactos .card-group {
-    flex-direction: column; /* Cambia a disposición vertical */
-    gap: 1.5rem; /* Mayor separación en vertical */
-  }
-}
-
-#metodologia .card{
-  background-color: #e7e7e7;
-}
-
-#metodologia .card-text li {
-  text-align: justify;
-  font-size: 1.25rem; /* Aumenta el tamaño del texto */
-}
-
-#metodologia .card-text .list-group-item:nth-child(odd) {
-  background-color: #4085ff; /* Azul oscuro */
-  color: white; /* Texto blanco para contraste */
-}
-
-#metodologia .card-text .list-group-item:nth-child(even) {
-  background-color: #3874df; /* Azul claro */
-  color: white; /* Texto negro para contraste */
-}
-
-#requerimientos .card{
-  background-color: #e7e7e7;
-}
-
-#requerimientos .card-body .row {
-  display: flex;
-  align-items: flex-start;
-  font-size: 1rem; /* Ajusta el tamaño del texto para mejorar la legibilidad */
-}
-
-#requerimientos .card-body .col.col-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 100%;
-  color: white; /* Color oscuro para el texto */
-}
-
-#requerimientos .card-strong-text {
-  font-size: 2rem; /* Aumenta el tamaño del texto del título */
-}
-
-#requerimientos .card-text {
-  color: white; /* Color gris oscuro para el texto del párrafo */
-  font-size: 1.3rem; /* Ajuste al tamaño de fuente del párrafo */
-}
-
-#requerimientos ul {
-  list-style-type: disc; /* Asegura que los elementos de lista tengan puntos */
-  padding-left: 1.5rem; /* Ajuste de espacio a la izquierda para la lista */
-}
-
-#requerimientos ul li {
-  font-size: 1.3rem;
-  margin-bottom: .5rem; /* Espacio entre los elementos de la lista */
-}
-
-
-
-
-
-#contactos .offcanvas-header {
-  background-color: #e7f0ff;
-  text-align: justify;
-}
-
-#contactos .offcanvas-body {
-  background-color: #e7f0ff;
-  text-align: justify;
-}
