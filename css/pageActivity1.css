@@ -1,0 +1,99 @@
+/* Estilos para la sección con id pageActivity1 */
+#pageActivity1 {
+    font-size: 1.2rem; /* Aumenta el tamaño de la fuente */
+    color: black; /* Color del texto */
+    background-color: #dfdfdf; /* Fondo general de la sección */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un diseño moderno */
+}
+
+/* Estilos para el título de la card */
+#pageActivity1 .card-header {
+    background-color: #0066cc; /* Fondo azul para el título */
+    color: #ffffff; /* Texto en blanco */
+    font-size: 1.75rem; /* Tamaño más grande para el título */
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #005bb5; /* Ligeramente más oscuro para contraste */
+    padding: 10px;
+}
+
+/* Estilos para el título de la card en actividades */
+#pageActivity1 .card-header.cardExample {
+    text-align: left;
+}
+
+/* Estilos para el cuerpo de la card */
+#pageActivity1 .card-body {
+    background-color: #e7e7e7; /* Fondo general de la sección */
+    border: 1px solid #ddd; /* Borde suave */
+}
+
+/* Estilos para el texto dentro de la sección */
+#pageActivity1 .card-text {
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 2.5rem; /* Mejora la legibilidad */
+    color: black; /* Color más oscuro para el texto */
+}
+
+/* Estilos para las filas dentro de la actividad */
+#pageActivity1 .row {
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Borde alrededor de las filas */
+    border-collapse: collapse;
+}
+
+#pageActivity1 .row:first-child {
+    color: white;
+    text-align: center; /* Centra el texto de la primera fila */
+    font-weight: bold;
+    background-color: #005bb5;
+}
+
+#pageActivity1 .row.align-items-center {
+    background-color: #e7e7e7;
+}
+
+#pageActivity1 .row .col {
+
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido de las columnas */
+    text-align: justify;
+}
+
+/* Estilos para los inputs tipo checkbox */
+#pageActivity1 input[type="checkbox"] {
+    transform: scale(1.5); /* Aumenta el tamaño de los checkboxes */
+    margin: 0 auto; /* Centra los checkboxes */
+}
+
+/* Estilos para el botón dentro de la sección */
+#pageActivity1 .btn-primary {
+    
+    border-color: #005bb5;
+    font-size: 20px; /* Tamaño más grande del texto */
+    font-weight: bold;
+    transition: all 0.3s ease-in-out; /* Suavidad en las transiciones */
+}
+
+/* Hover y focus para el botón */
+#pageActivity1 .btn-primary:hover {
+    background-color: #005bb5; /* Color más oscuro al pasar el cursor */
+    border-color: #004a94;
+}
+
+#pageActivity1 .btn-primary:focus {
+    box-shadow: 0 0 5px #005bb5; /* Añade un resplandor */
+}
+
+/* Opciones adicionales para mejorar el diseño móvil */
+@media (max-width: 768px) {
+    #pageActivity1 {
+        font-size: 16px; /* Ajusta el tamaño en dispositivos pequeños */
+    }
+
+    #pageActivity1 .btn-primary {
+        font-size: 18px; /* Texto más pequeño para botones en pantallas reducidas */
+    }
+}

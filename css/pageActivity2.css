@@ -1,0 +1,114 @@
+
+
+/* Card header */
+#pageActivity2 .card-header {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+}
+
+/* Instructions text */
+#pageActivity2 .card-text {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: black;
+}
+
+/* Questions */
+#pageActivity2 .question {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    padding: 10px 15px;
+    /* border-left: 5px solid #007bff; */
+    background-color: #ffffff;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; */
+}
+
+/* Question titles */
+#pageActivity2 .question h2 {
+    font-size: 1.2rem;
+    color: #0056b3;
+}
+
+/* Radio buttons */
+#pageActivity2 .question input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Feedback messages */
+#pageActivity2 .question div[id^="feedback-"] {
+    margin-top: 10px;
+    font-size: 1.25rem;
+}
+
+/* Buttons */
+#pageActivity2 .btn-primary {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#pageActivity2 .btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Responsive Grid */
+#pageActivity2 .container.text-center {
+    margin-top: 20px;
+}
+
+#pageActivity2 .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #pageActivity2 .card-header {
+        font-size: 1.2em;
+    }
+
+    #pageActivity2 .card-text {
+        font-size: 0.9rem;
+    }
+
+    #pageActivity2 .question h2 {
+        font-size: 1rem;
+    }
+
+    #pageActivity2 .btn-primary {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    #pageActivity2 {
+        padding: 10px;
+    }
+
+    #pageActivity2 .card-header {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #pageActivity2 .card-body {
+        padding: 15px;
+    }
+
+    #pageActivity2 .btn-primary {
+        width: 100%;
+        padding: 10px;
+    }
+}

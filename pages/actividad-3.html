@@ -14,22 +14,14 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <!-- Bootstrap CSS-->
-<!-- Local CSS-->
-<link href="../css/header.css" rel="stylesheet" />
-<link href="../css/navbar.css" rel="stylesheet" />
-<link href="../css/offcanvas.css" rel="stylesheet" />
-<link href="../css/card.css" rel="stylesheet" />
-<link href="../css/table.css" rel="stylesheet" />
-<link href="../css/pagination.css" rel="stylesheet" />
-<link href="../css/footer.css" rel="stylesheet" />
-<!-- Local CSS-->
+
 </head>
 
 <body>
     <!-- Page content -->
 
     <main>
-        <section id="pageContentCard">
+        <section id="pageActivity3">
             <div class="card">
                 <h3 class="card-header">Actividad 3: Cuestionario de memoria
                 </h3>
@@ -64,8 +56,8 @@
 
 
 
-                    <div class="question" style="text-align: justify;">
-                        <h2 style="font-size: 17px; font-weight: bold;">1. ¿Cuáles son los métodos principales de
+                    <div class="question" >
+                        <h2 >1. ¿Cuáles son los métodos principales de
                             asignación de espacio en la memoria?</h2>
                         <input type="radio" name="q1" value="a"> <b>a)</b> Contigua, Segmentada, Fragmentada.<br>
                         <input type="radio" name="q1" value="b"> <b>b)</b> Contigua, Ligada y Indexada.<br>
@@ -76,8 +68,8 @@
 
                     <br>
 
-                    <div class="question" style="text-align: justify;">
-                        <h2 style="font-size: 17px; font-weight: bold;">2. ¿Cuál es una característica distintiva de la
+                    <div class="question" >
+                        <h2 >2. ¿Cuál es una característica distintiva de la
                             asignación de espacio contigua?</h2>
                         <input type="radio" name="q2" value="a"> <b>a)</b> No requiere bloques consecutivos.<br>
                         <input type="radio" name="q2" value="b"> <b>b)</b> Asigna bloques de memoria dispersos en la
@@ -91,8 +83,8 @@
 
                     <br>
 
-                    <div class="question" style="text-align: justify;">
-                        <h2 style="font-size: 17px; font-weight: bold;">3. En la asignación ligada, ¿cómo se almacenan
+                    <div class="question" >
+                        <h2 >3. En la asignación ligada, ¿cómo se almacenan
                             las direcciones de cada bloque?</h2>
                         <input type="radio" name="q3" value="a"> <b>a)</b> Mediante índices externos en la memoria
                         principal.<br>
@@ -107,8 +99,8 @@
 
                     <br>
 
-                    <div class="question" style="text-align: justify;">
-                        <h2 style="font-size: 17px; font-weight: bold;">4. ¿Qué técnica de asignación permite acceder a
+                    <div class="question" >
+                        <h2 >4. ¿Qué técnica de asignación permite acceder a
                             bloques de manera directa mediante un índice?</h2>
                         <input type="radio" name="q4" value="a"> <b>a)</b> Ligada.<br>
                         <input type="radio" name="q4" value="b"> <b>b)</b> Indexada.<br>
@@ -119,8 +111,8 @@
 
                     <br>
 
-                    <div class="question" style="text-align: justify;">
-                        <h2 style="font-size: 17px; font-weight: bold;">5. ¿Cuál es una desventaja de la asignación
+                    <div class="question" >
+                        <h2 >5. ¿Cuál es una desventaja de la asignación
                             contigua de espacio en memoria?</h2>
                         <input type="radio" name="q5" value="a"> <b>a)</b> Genera fragmentación externa.<br>
                         <input type="radio" name="q5" value="b"> <b>b)</b> Genera fragmentación interna.<br>
@@ -131,8 +123,8 @@
 
                     <br>
 
-                    <div class="question" style="text-align: justify;">
-                        <h2 style="font-size: 17px; font-weight: bold;">6. En la asignación indexada, ¿qué estructura
+                    <div class="question" >
+                        <h2 >6. En la asignación indexada, ¿qué estructura
                             suele utilizarse para gestionar los bloques de memoria?</h2>
                         <input type="radio" name="q6" value="a"> <b>a)</b> Lista enlazada.<br>
                         <input type="radio" name="q6" value="b"> <b>b)</b> Tabla de índice.<br>
@@ -143,8 +135,8 @@
 
                     <br>
 
-                    <div class="question" style="text-align: justify;">
-                        <h2 style="font-size: 17px; font-weight: bold;">7. ¿Qué tipo de fragmentación puede aparecer en
+                    <div class="question" >
+                        <h2 >7. ¿Qué tipo de fragmentación puede aparecer en
                             la asignación contigua de memoria?</h2>
                         <input type="radio" name="q7" value="a"> <b>a)</b> Fragmentación interna únicamente.<br>
                         <input type="radio" name="q7" value="b"> <b>b)</b> Fragmentación externa únicamente.<br>
@@ -155,8 +147,8 @@
 
                     <br>
 
-                    <div class="question" style="text-align: justify;">
-                        <h2 style="font-size: 17px; font-weight: bold;">8. ¿Cuál es la principal ventaja de la
+                    <div class="question" >
+                        <h2 >8. ¿Cuál es la principal ventaja de la
                             asignación de espacio ligada?</h2>
                         <input type="text" name="q8" style="width: 20rem;" value=""><br>
                         <span id="feedback-q8"></span>
@@ -164,8 +156,8 @@
 
                     <br>
 
-                    <div class="question" style="text-align: justify;">
-                        <h2 style="font-size: 17px; font-weight: bold;">9. ¿Qué problema resuelve la asignación de
+                    <div class="question" >
+                        <h2 >9. ¿Qué problema resuelve la asignación de
                             espacio indexada en comparación con la asignación contigua?</h2>
                         <input type="text" name="q9" style="width: 20rem;" value=""><br>
                         <span id="feedback-q9"></span>
@@ -173,8 +165,8 @@
 
                     <br>
 
-                    <div class="question" style="text-align: justify;">
-                        <h2 style="font-size: 17px; font-weight: bold;">10. Describe cómo funciona la administración de
+                    <div class="question" >
+                        <h2 >10. Describe cómo funciona la administración de
                             memoria en la asignación contigua.</h2>
                         <input type="text" name="q10" style="width: 20rem;" value=""><br>
                         <span id="feedback-q10"></span>
@@ -192,14 +184,14 @@
                         <li><b>Flexibilidad y reducción de fragmentación.</b></li>
                     </ul>
                     <div class="container text-center">
-                        <div class="row" style="border-color: transparent;">
+                        <div class="row" >
                             <div class="col">
                                 <button type="button" onclick="checkAnswers()" class="btn btn-primary">Validar
                                     respuestas</button>
                             </div>
                             <div class="col">
-                                <a href="actividad-3.html"><button type="button" class="btn btn-primary">Reiniciar
-                                        marcas</button></a>
+                                <button type="button" onclick="resetearMarcas()" class="btn btn-primary">Resetear
+                                    marcas</button>
                             </div>
                         </div>
                     </div>

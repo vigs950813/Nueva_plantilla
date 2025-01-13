@@ -1,0 +1,111 @@
+/* Estilo general para la sección */
+#pageActivity3 {
+    background-color: #f5f5f5;
+    box-shadow: none;
+    font-family: Arial, sans-serif;
+}
+
+/* Cabecera de la tarjeta */
+#pageActivity3 .card-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    text-align: center;
+}
+
+
+/* Texto principal */
+#pageActivity3 .card-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333333;
+}
+
+/* Lista ordenada */
+#pageActivity3 ol.card-text {
+    
+}
+
+#pageActivity3 .question h2 {
+    font-size: 1.25rem;
+    color: #0056b3;
+}
+
+
+#pageActivity3 .question span {
+    font-size: 1rem;
+    display: block;
+}
+
+/* Campos de texto */
+#pageActivity3 .question input[type="text"] {
+    width: 100%;
+    max-width: 40rem;
+    font-size: 1rem;
+}
+
+/* Opciones de respuesta */
+#pageActivity3 ul.card-text {
+    list-style-type: disc;
+    font-size: 1.2rem;
+    color: #333333;
+}
+
+/* Botones */
+#pageActivity3 .btn-primary {
+    font-size: 1.2rem;
+    /* background-color: #007bff; */
+    border: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#pageActivity3 .btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+
+
+#pageActivity3 .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #pageActivity3 .card-header {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    #pageActivity3 .card-text {
+        font-size: 1rem;
+    }
+
+    #pageActivity3 .question h2 {
+        font-size: 1.2rem;
+    }
+
+    #pageActivity3 .btn-primary {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #pageActivity3 {
+        padding: 1rem;
+    }
+
+    #pageActivity3 .card-header {
+        font-size: 1.2rem;
+    }
+
+    #pageActivity3 .btn-primary {
+        width: 100%;
+        padding: 0.8rem;
+    }
+}
