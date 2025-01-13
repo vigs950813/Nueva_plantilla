@@ -7,13 +7,18 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un diseño moderno */
 }
 
+#glossaryCard h2.card-header{
+    text-align: center;
+}
+
+
 /* Estilos para el título de la card */
 #glossaryCard .card-header {
     background-color: #0066cc; /* Fondo azul para el título */
     color: #ffffff; /* Texto en blanco */
     font-size: 22px; /* Tamaño más grande para el título */
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     border-bottom: 2px solid #005bb5; /* Ligeramente más oscuro para contraste */
     padding: 10px;
 }
