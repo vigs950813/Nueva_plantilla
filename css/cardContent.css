@@ -88,8 +88,6 @@
 /* Hover effect */
 #temario .list-group-item a:hover {
   background-color: #00509E; /* Azul más brillante */
-  transform: scale(1.05); /* Agrandar ligeramente al pasar el cursor */
-  text-decoration: underline; /* Subrayado para mayor retroalimentación */
   border-radius: 0.5rem;
 }
 
@@ -117,5 +115,4 @@
 
 #temario .accordion-button:active {
   background-color: #003f7f; /* Azul más oscuro para el estado activo */
-  transform: scale(0.97); /* Reducir ligeramente al hacer clic */
 }

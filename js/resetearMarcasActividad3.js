@@ -1,19 +1,19 @@
-function resetearMarcas() {
-    // Restablecer las respuestas de las opciones múltiples
+function resetearMarcas3() {
+    // Elimina el contenido de los spans de retroalimentación
+    const feedbackSpans = document.querySelectorAll('[id^="feedback-"]');
+    feedbackSpans.forEach(span => {
+        span.innerHTML = ""; // Borra el contenido del span
+    });
+
+    // Desmarca las opciones seleccionadas de las preguntas de opción múltiple
     const radioButtons = document.querySelectorAll('input[type="radio"]');
-    radioButtons.forEach((radio) => {
-        radio.checked = false; // Desmarcar las opciones seleccionadas
+    radioButtons.forEach(radio => {
+        radio.checked = false; // Desmarca los botones de opción
     });
 
-    // Restablecer las respuestas de los campos de texto
+    // Limpia los campos de texto
     const textInputs = document.querySelectorAll('input[type="text"]');
-    textInputs.forEach((input) => {
-        input.value = ''; 
-    });
-
-    // Restablecer los feedbacks
-    const feedbackSpans = document.querySelectorAll('span[id^="feedback-"]');
-    feedbackSpans.forEach((span) => {
-        span.innerHTML = ''; // Limpiar retroalimentación
+    textInputs.forEach(input => {
+        input.value = ""; // Borra el contenido del campo de texto
     });
 }

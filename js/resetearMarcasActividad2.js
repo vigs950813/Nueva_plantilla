@@ -1,4 +1,4 @@
-function resetearMarcas() {
+function resetearMarcas2() {
     // Reinicia todas las marcas (radios y checkboxes)
     const inputs = document.querySelectorAll('input[type="radio"], input[type="checkbox"]');
     inputs.forEach(input => {

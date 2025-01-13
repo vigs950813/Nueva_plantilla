@@ -1,4 +1,4 @@
-function checkAnswers() {
+function checkAnswers4() {
     let correctCount = 0;
     let incorrectCount = 0;
 

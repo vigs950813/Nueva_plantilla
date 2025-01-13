@@ -1,4 +1,4 @@
-function validarRespuestas() {
+function validarRespuestas1() {
     // Definir las respuestas correctas
     const respuestasCorrectas = {
         q1: 'v',

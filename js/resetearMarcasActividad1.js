@@ -1,4 +1,4 @@
-function resetearMarcas() {
+function resetearMarcas1() {
     // Seleccionar todas las filas de preguntas
     for (let i = 1; i <= 6; i++) {
         const preguntaRow = document.getElementById('pregunta' + i);
