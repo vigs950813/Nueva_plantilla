@@ -23,99 +23,62 @@
   <main>
     <section id="pageContentCard">
       <div class="card">
-        <h5 class="card-header">Introducción</h5>
-
-        <div class="card-body">
-
-          <p class="card-text">En esta unidad temática, exploraremos la funcionalidad de la organización de
-            archivos. Este sistema es esencial para estructurar los datos, permitiendo a los sistemas
-            operativos controlar cómo se resguarda y recupera la información, así como la organización de
-            archivos y carpetas para asegurar una adecuada asignación del espacio en el dispositivo.</p>
-
-          <p class="card-text">Los sistemas de archivos facilitan la organización de datos en una estructura
-            jerárquica, permitiendo crear, mover, modificar y eliminar archivos y carpetas. Son esenciales
-            para optimizar el rendimiento, garantizando la totalidad de la información, simplificando la
-            administración y copia de validación de todos los datos.</p>
-
-          <p class="card-text">Es crucial que entiendas la importancia de este aprendizaje para tu docente,
-            quien te facilitará y guiará a lo largo de esta unidad. Por ello, presta atención a sus
-            indicaciones.</p>
-
-
-          <!-- <p class="card-text">
-                  En esta unidad temática, exploraremos la funcionalidad de un sistema de archivos. Este sistema es esencial para estructurar los datos, permitiendo a los
-                  sistemas operativos controlar cómo se resguarda y recupera la información, así como la organización
-                  de archivos y carpetas para asegurar una adecuada asignación del espacio en el dispositivo.
-              </p>
-              <p class="card-text">
-                  Los sistemas de archivos facilitan la organización de datos en una estructura jerárquica,
-                  permitiendo crear, mover, modificar y eliminar archivos y carpetas. Son esenciales para
-                  optimizar el rendimiento, garantizando la integridad de la información y simplificar la gestión y copia
-                  de seguridad de todos los datos.
-              </p>
-              <p class="card-text">
-                  Es crucial que entiendas la importancia de este aprendizaje para tu docente, quien te facilitará
-                  y guiará a lo largo de esta unidad. Por ello, presta atención a sus indicaciones.
-              </p> -->
-
-        </div>
-
-      </div>
-      <div class="card">
         <h5 class="card-header">4.4 Sistemas de archivos estructurados</h5>
         <div class="card-body">
-
-          <p class="card-text">Organizan y administran los datos en el almacenamiento de una manera organizada y
-            predefinida. Estos sistemas permiten a los sistemas operativos realizar un seguimiento preciso de la
-            ubicación, acceso y gestión de los archivos almacenados en un dispositivo de almacenamiento. Hay una gran
-            clasificación de estos, tienen propias características, y pueden clasificarse en dos categorías principales:
-            de bitácora y de diario.</p>
-
-          <p class="card-text">A continuación, se presenta una lista de sistemas de archivos más comunes de acuerdo con
-            su categoría.</p>
-
-
-          <p class="card-text"><strong>Sistemas de archivos de bitácora:</strong> Son archivos organizados que no
-            mantienen una comprobación de procedimientos llevadas. Los cambios se aplican directamente al sistema de
-            archivos, lo que hace que la mejoría sea visiblemente identificada por si hubiese algún inconveniente y
-            requiera una revisión más detallada.</p>
-
-          <p class="card-text"><strong>FAT32:</strong> Sistema de archivos compatible con múltiples sistemas operativos
-            y adecuado para unidades extraíbles.</p>
-          <p class="card-text"><strong>exFAT:</strong> Optimizado para memorias, permite archivos grandes y es
-            compatible en varios dispositivos.</p>
-          <p class="card-text"><strong>ext2:</strong> Sistema de archivos de <a href="glosario.html"
-              target="_blank">Linux</a> sin <i>journaling</i>, utilizado en entornos donde no es necesario el registro
-            en diario.</p>
-
-          <p class="card-text"><strong>Sistemas de archivos de diario:</strong> Estos sistemas mantienen un registro
-            (diario) de las operaciones, especialmente de los metadatos. En caso de fallo, el sistema puede utilizar el
-            diario para restuaruar el estado coherente del sistema de archivos de manera rápida y confiable.</p>
-
-          <p class="card-text"><strong>NTFS:</strong> Sistema de archivos de Windows con soporte para journaling y
-            permisos avanzados.</p>
-          <p class="card-text"><strong>ext3:</strong> Versión de ext2 con journaling, ampliamente utilizada para manejar
-            archivos grandes.</p>
-          <p class="card-text"><strong>ReiserFS:</strong> Sistema de archivos de Linux optimizado para manejar grandes
-            cantidades de archivos pequeños.</p>
-          <p class="card-text"><strong>JFS:</strong> Sistema de archivos de IBM para Linux, optimizado para servidores
-            con journaling completo.</p>
-
-
-          <p class="card-text">
-            A continuación, se presenta el siguiente material audiovisual para extender más información sobre el tema.
+          <p class="card-text">Los sistemas de archivos estructurados organizan los datos en dispositivos de
+            almacenamiento mediante una arquitectura jerárquica (directorios, subdirectorios y archivos) y mecanismos
+            para garantizar integridad, eficiencia y recuperación ante fallos. A continuación, se exploran tres subtemas
+            clave: sistemas de archivos de bitácora (journaling), sistemas sin journaling en Linux y sistemas de diario.
           </p>
 
-          <p class="card-text">
-            <strong>Archivos Estructurados</strong>
-          </p>
+          <strong class="card-text">Sistemas de Archivos de Bitácora (Journaling) (Silberschatz et al., 2018, p. 507)</strong>
+          <p class="card-text">Un sistema de archivos con journaling registra los cambios pendientes en un "diario"
+            (journal) antes de aplicarlos al sistema principal. Esto minimiza la corrupción de datos en caso de fallos
+            (ej. cortes de energía).</p>
+          <p class="card-text"><strong>Funcionamiento</strong></p>
+          <ul class="card-text">
+            <li>Fase de registro: Las operaciones (ej. crear, modificar) se anotan en el diario.</li>
+            <li>Fase de confirmación: Si el sistema se interrumpe, el diario permite recuperar el estado previo.</li>
+          </ul>
+          <p class="card-text"><strong>Ejemplos</strong></p>
+          <ul class="card-text">
+            <li>ext3/ext4 (Linux): Usan journals para metadatos y/o datos.</li>
+            <li>NTFS (Windows): Registra transacciones en el $LogFile.</li>
+          </ul>
 
-          <div class="text-center">
-            <iframe style="width:50rem; height: 30rem;" src="https://www.youtube.com/embed/Kn0aPg1xP_g"
-              title="ArchivosEstructurados" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
+          <h3 class="card-text">Sistemas de Archivos de Linux sin Journaling (Tanenbaum & Woodhull, 2006, p. 222)</h3>
+          <p class="card-text">Sistemas que no usan diarios para registrar cambios, lo que los hace más rápidos pero
+            menos tolerantes a fallos. Requieren herramientas como fsck para reparar inconsistencias tras un apagado
+            abrupto.</p>
+          <p class="card-text"><strong>Ejemplo:</strong> ext2: Sistema de archivos clásico de Linux. Almacena metadatos
+            en inodos y datos en bloques, sin registro de transacciones.</p>
+
+          <h3 class="card-text">Sistemas de Archivos de Diario (Carrier, 2005, p. 125; Silberschatz et al., 2018, p.
+            509)</h3>
+          <p class="card-text">Similar al journaling, pero con enfoques específicos:</p>
+          <ul class="card-text">
+            <li><strong>Journaling de metadatos:</strong> Solo registra cambios en metadatos (ej. ext3).</li>
+            <li><strong>Journaling completo:</strong> Registra tanto metadatos como datos (ej. ext4 en modo
+              "data=journal").</li>
+          </ul>
+          <p class="card-text"><strong>Ventajas</strong></p>
+          <ul class="card-text">
+            <li>Recuperación rápida tras fallos.</li>
+            <li>Mayor integridad en sistemas críticos.</li>
+          </ul>
+
+          <strong class="card-text">Conclusión</strong>
+          <p class="card-text">En conclusión, los sistemas de archivos estructurados equilibran rendimiento y seguridad
+            mediante estrategias como el journaling. Mientras sistemas como ext4 o NTFS priorizan la integridad con
+            diarios, otros como ext2 ofrecen velocidad a costa de requerir verificaciones manuales. Comprender estas
+            diferencias es clave para elegir el sistema adecuado según el contexto (ej. servidores críticos vs.
+            dispositivos embebidos).</p>
+
+          <strong class="card-text">Sistemas de Archivos Estructurados: Journaling por Bitácora y Diario</strong>
+          <p class="card-text">Los sistemas de archivos estructurados con journaling (bitácora o diario) son mecanismos
+            clave para garantizar la integridad de los datos ante fallos del sistema. A continuación, se desarrolla su
+            definición, beneficios, características y limitaciones de los subtemas 4.4.1 (Por bitácoras) y 4.4.2 (Por
+            diario).</p>
         </div>
       </div>
     </section>

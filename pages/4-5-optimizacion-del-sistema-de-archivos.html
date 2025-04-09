@@ -22,111 +22,101 @@
     <main>
         <section id="pageContentCard">
             <div class="card">
-                <h5 class="card-header">Introducción</h5>
-
-                <div class="card-body">
-
-                    <p class="card-text">
-                        La optimización es crucial para aumentar la eficacia y velocidad del sistema informático. Un
-                        sistema que no está optimizado puede generar pérdidas de tiempo en el desempeño profesional.
-                        Algunos de los beneficios de optimizar el sistema de archivos incluyen:
-
-                    </p>
-
-                    <p class="card-text">
-                        Eliminar la redundancia: Corrige errores, inconsistencias y duplicaciones en los conjuntos de
-                        datos, mejorando la precisión y velocidad de recuperación.
-                    </p>
-
-                    <p class="card-text">
-                        Reducir el uso de CPU: Disminuye el uso de la CPU al leer y escribir archivos. Detectar
-                        problemas potenciales: Permite identificar errores, código innecesario y otros problemas
-                        potenciales.
-                    </p>
-
-                    <p class="card-text">
-                        Mejorar la calidad y eficiencia de la aplicación: Siguiendo las recomendaciones del optimizador,
-                        se puede incrementar la calidad y eficiencia de la aplicación.
-                    </p>
-
-                    <p class="card-text">
-                        En el desarrollo de este tema, se examinarán las formas de establecer la recuperación,
-                        consistencia y rendimiento de los archivos dentro del sistema operativo.
-                    </p>
-
-                    <p class="card-text">
-                        Es fundamental que comprendas la importancia de este aprendizaje para tu docente, quien te
-                        guiará a lo largo de esta unidad. Presta atención a sus indicaciones.
-                    </p>
-
-                </div>
-
-            </div>
-            <div class="card">
                 <h5 class="card-header">4.5 Optimización del sistema de archivos</h5>
                 <div class="card-body">
+                    <p class="card-text">Los sistemas de archivos son la columna vertebral de la gestión de datos en
+                        sistemas operativos, responsables de organizar, almacenar y recuperar información de manera
+                        eficiente. La optimización de estos sistemas busca maximizar el rendimiento, reducir la latencia
+                        y garantizar la integridad de los datos, especialmente en entornos con altas demandas de acceso
+                        (ej. servidores, bases de datos). Factores como la fragmentación, el tamaño de bloques, el
+                        journaling y las políticas de almacenamiento en caché influyen directamente en su eficacia. Esta
+                        investigación explora las facetas clave para ajustar el rendimiento de un sistema de archivos,
+                        respaldada por referencias académicas y técnicas.</p>
 
-                    <p class="card-text">
-                        Contar con un espacio de almacenamiento de información puede ser la clave para el funcionamiento
-                        diario de cualquier empresa, en especial si se dedica a la venta de productos. La cantidad de
-                        datos activos que llegan a acumularse a lo largo del tiempo (y que crecen a diario) puede
-                        convertirse en un verdadero problema si los equipos no utilizan el sistema más adecuado.
+                    <strong class="card-text">Facetas en el Ajuste de Rendimiento del Sistema de Archivos</strong>
+                    <ol class="card-text">
+                        <li>
+                            <p class="card-text"><strong>Almacenamiento en Caché (Silberschatz et al., 2018, p.
+                                    533)</strong></p>
+                            <p class="card-text"><strong>Definición</strong> <br>Uso de memoria RAM para almacenar datos
+                                accedidos frecuentemente, reduciendo las operaciones de lectura/escritura en disco.</p>
+                            <p class="card-text"><strong>Beneficios</strong></p>
+                            <ul class="card-text">
+                                <li>Disminuye la latencia en accesos repetidos.</li>
+                                <li>Optimiza el uso de recursos del sistema.</li>
+                            </ul>
+                            <p class="card-text"><strong>Ejemplo</strong></p>
+                            <ul class="card-text">
+                                <li>Linux: Utiliza el Page Cache para almacenar datos de archivos en memoria.</li>
+                                <li>Windows: Emplea el Cache Manager integrado en el kernel.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p class="card-text"><strong>Ajuste del Tamaño de Bloques (Tanenbaum y Woodhull, 2006, p.
+                                    215)</strong></p>
+                            <p class="card-text"><strong>Definición</strong> <br>Configuración del tamaño de los bloques de
+                                almacenamiento para equilibrar espacio y rendimiento. Bloques grandes reducen la
+                                fragmentación, mientras que bloques pequeños minimizan el espacio desperdiciado.</p>
+                            <p class="card-text"><strong>Beneficios</strong></p>
+                            <ul class="card-text">
+                                <li>Mejora la eficiencia en el almacenamiento de archivos pequeños o grandes.</li>
+                            </ul>
+                            <p class="card-text"><strong>Ejemplo</strong></p>
+                            <ul class="card-text">
+                                <li>ext4: Permite bloques de 1 KB a 64 KB.</li>
+                                <li>NTFS: Usa clústeres de 4 KB por defecto.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p class="card-text"><strong>Reducción de la Fragmentación (Carrier, 2005, p. 89)</strong>
+                            </p>
+                            <p class="card-text"><strong>Definición</strong> <br>Técnicas para evitar que los archivos se
+                                almacenen en bloques no contiguos, lo que ralentiza el acceso.</p>
+                            <p class="card-text"><strong>Estrategias</strong></p>
+                            <ul class="card-text">
+                                <li>Asignación contigua: Usada en sistemas como NTFS.</li>
+                                <li>Algoritmos de colocación: Como el best-fit o worst-fit.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p class="card-text"><strong>Optimización del Journaling (Linux Kernel Documentation, s.
+                                    f.)</strong></p>
+                            <p class="card-text"><strong>Definición</strong> <br>Configuración del diario (journal) para
+                                registrar operaciones críticas sin penalizar el rendimiento.</p>
+                            <p class="card-text"><strong>Modos</strong></p>
+                            <ul class="card-text">
+                                <li>Write-ahead logging: Solo registra metadatos (ej. ext3).</li>
+                                <li>Data journaling: Registra metadatos y datos (mayor seguridad, menor velocidad).</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p class="card-text"><strong>Gestión de Metadatos Eficiente (Silberschatz et al., 2018, p.
+                                    487)</strong></p>
+                            <p class="card-text"><strong>Definición</strong> <br>Organización optimizada de metadatos
+                                (permisos, fechas, ubicación) para acelerar búsquedas.</p>
+                            <p class="card-text"><strong>Ejemplo</strong></p>
+                            <ul class="card-text">
+                                <li>ZFS: Almacena metadatos en árboles B+ para accesos rápidos.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p class="card-text"><strong>Uso de RAID y SSDs (Patterson, Gibson & Katz, 1988, p.
+                                    113)</strong></p>
+                            <p class="card-text"><strong>Definición</strong> <br>Combinación de discos (RAID) o uso de
+                                unidades de estado sólido (SSDs) para mejorar velocidad y redundancia.</p>
+                            <p class="card-text"><strong>Beneficios</strong></p>
+                            <ul class="card-text">
+                                <li>RAID 0: Aumenta la velocidad mediante striping.</li>
+                                <li>SSDs: Reducen la latencia en operaciones aleatorias.</li>
+                            </ul>
+                        </li>
+                    </ol>
 
-                    </p>
-
-                    <p class="card-text">
-                        Hay muchas facetas en el ajuste de rendimiento del sistema de archivos:
-                    </p>
-
-                    <ul class="card-text">
-                        <li><strong>Escritura secuencial y aleatoria detrás del ajuste de rendimiento</strong></li>
-                        Escribir detrás implica
-                        grabar de forma asíncrona páginas modificadas en la memoria en el disco después de alcanzar un
-                        umbral en lugar de
-                        esperar a que el daemon syncd deseche las páginas en el disco
-                        <li><strong>Ajuste del rendimiento de E/S de disco asíncrono </strong></li>Si una aplicación
-                        realiza una operación
-                        de E/S síncrona, debe esperar a que se complete la E/S. En cambio, las operaciones de E/S
-                        asíncronas se ejecutan en
-                        segundo plano y no bloquean las aplicaciones de usuario
-                        <li><strong>Ajuste del almacenamiento intermedio del sistema de archivos</strong></li>Los
-                        siguientes parámetros ioo
-                        y vmstat -v pueden ser útiles para detectar cuellos de botella del almacenamiento intermedio de
-                        E/S y para ajustar
-                        la E/S del disco
-                        <li><strong>Ajuste de entrada y salida (E/S) directa</strong></li>La principal ventaja de la E/S
-                        directa es reducir
-                        la utilización de CPU para lecturas y grabaciones de archivos eliminando la copia de la memoria
-                        caché de archivos en
-                        el almacenamiento intermedio de usuario
-                    </ul>
-
-                    <p class="card-text">
-                        A continuación, se proporcionan los siguientes materiales audiovisuales con el fin de ahondar
-                        más sobre el tema.
-                    </p>
-
-
-                    <p class="card-text">
-                        <strong>Optimización de archivos</strong>
-                    </p>
-
-                    <div class="text-center">
-                        <iframe style="width: 50rem; height: 40rem;" src="https://www.youtube.com/embed/VI_WZHhJN10"
-                            title="optimizacion de archivos" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <br>
-                    <p class="card-text">
-                        <strong>Optimización del sistema de archivos</strong>
-                    </p>
-                    <div class="text-center">
-                        <iframe style="width: 50rem; height: 40rem;" src="https://www.youtube.com/embed/LvQWKYcMVGc"
-                            title="Optimización del sistema de archivos" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
+                    <p class="card-text">La optimización de sistemas de archivos requiere equilibrar velocidad,
+                        integridad y uso de recursos. Estrategias como el ajuste de bloques, el almacenamiento en caché
+                        y la elección adecuada de journaling son críticas en entornos empresariales. Sistemas modernos
+                        como ZFS y ext4 ejemplifican cómo estas técnicas se integran para manejar cargas de trabajo
+                        intensivas, aunque su configuración debe adaptarse a cada caso de uso.</p>
                 </div>
             </div>
         </section>

@@ -25,68 +25,66 @@
                 <h5 class="card-header">4.4.1 Por bitácoras</h5>
                 <div class="card-body">
 
-                    <p class="card-text">
-                        Si bien los sistemas de archivos basados en registros son una propuesta interesante, no se
-                        emplean de manera extendida, en parte debido a su significativa incompatibilidad con los
-                        sistemas de archivos actuales. No obstante, uno de los conceptos implícitos en ellos, la
-                        resistencia a fallas, se puede incorporar fácilmente a sistemas de archivos más tradicionales.
-                    </p>
+                    <p class="card-text">El journaling por bitácora/diario es un método que registra las operaciones
+                        pendientes (crear, modificar, eliminar archivos) en un registro (journal) antes de aplicarlas al
+                        sistema de archivos principal. Esto permite recuperar el estado coherente del sistema tras
+                        fallos como cortes de energía, errores de hardware o cierres abruptos.</p>
 
-                    <p class="card-text">
-                        La idea es guardar la identificación de las acciones en donde se realicen antes de ejecutarlas.
-                        Así, si llegara a tener inconvenientes antes de completar la tarea prevista, al volver a
-                        inicializar el sistema, podrá visualizar su registro para identificar lo que estaba sucediendo
-                        en el momento del inconveniente y con ello finalizar la acción requerida.
+                    <p class="card-text"><strong>Ejemplos</strong></p>
+                    <ul class="card-text">
+                        <li>NTFS (Windows): Usa un archivo oculto ($LogFile) para registrar transacciones.</li>
+                        <li>ext3/ext4 (Linux): Implementa journaling para metadatos y, opcionalmente, datos.</li>
+                    </ul>
 
-                    </p>
-
-                    <p class="card-text">
-                        Estos sistemas de archivos, denominados registro (Sistema de archivos de diario
-                        , JFS), se utilizan en el momento. Es por ello por lo que NTFS (Sistema de archivos de nueva
-                        tecnología) de Microsoft, considerando también ext3 y ReiserFS de Linux, son ejemplos de
-                        sistemas con registro.
-
-                    </p>
-
-                    <p class="card-text">
-                        Para comprender la importancia del problema, identifique la ejecución de una acción sencilla que
-                        ocurre frecuentemente al eliminar un archivo. Esta operación (en UNIX) implica tres pasos:
-
-                    </p>
-
-                    <ol class="card-text" type="1">
-                        <li>Eliminar el archivo de su ubicación dentro de la estructura</li>
-                        <li>Soltar el nodo-i y transferirlo a la protección de nodos-i disponibles
+                    <p class="card-text"><strong>Beneficios (Carrier, 2005, p. 125)</strong></p>
+                    <ul class="card-text">
+                        <li><strong>Fiabilidad de datos:</strong> Registra cambios antes de ejecutarlos, evitando
+                            corrupción en fallos inesperados.
+                            <ul class="card-text">
+                                <li>Ejemplo: En ext4, el journaling garantiza que los metadatos no queden en estado
+                                    inconsistente.</li>
+                            </ul>
                         </li>
-                        <li>Restituir todos los bloques de disco a la protección de agrupación de dispositivo libres
+                        <li><strong>Recuperación optimizada:</strong> Reduce el tiempo de reparación al evitar escanear
+                            todo el disco (como en sistemas sin journaling, ej. ext2).</li>
+                        <li><strong>Rendimiento mejorado:</strong> Agrupa operaciones para minimizar escrituras en disco
+                            (ej. write-ahead logging).</li>
+                    </ul>
+
+                    <p class="card-text"><strong>Características (Silberschatz et al., 2018, p. 508)</strong></p>
+                    <ul class="card-text">
+                        <li><strong>Modos de operación:</strong>
+                            <ul class="card-text">
+                                <li>Write-ahead logging: Registra solo metadatos (ej. modo predeterminado en ext3).</li>
+                                <li>Ordered mode: Registra metadatos y datos en secuencia (equilibra velocidad y
+                                    seguridad).</li>
+                                <li>Data mode: Registra ambos (máxima integridad, pero mayor overhead).</li>
+                            </ul>
                         </li>
-                    </ol>
+                        <li><strong>Estructura del diario:</strong> Almacena transacciones en bloques dedicados,
+                            separados del sistema de archivos principal.</li>
+                    </ul>
 
-                    <p class="card-text">
-                        En Windows. Cuando no existe inconvenientes en el orden en que se ejecutan estos pasos no es
-                        relevante; pero en cuando existe inconvenientes, sí lo es. Por lo que si se termina el primer
-                        paso y puede existir que posteriormente presente algún inconveniente.
+                    <p class="card-text"><strong>Limitaciones (Carrier, 2005, p.130)</strong></p>
+                    <ul class="card-text">
+                        <li><strong>Overhead de rendimiento:</strong> El registro continuo consume recursos adicionales
+                            (CPU, escrituras en disco).
+                            <ul class="card-text">
+                                <li>Ejemplo: En NTFS, el $LogFile puede ocupar hasta 4 MB por defecto.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Incompatibilidad:</strong> Sistemas tradicionales sin journaling (ej. ext2) no
+                            pueden leer diarios de ext3/ext4 sin ajustes.</li>
+                        <li><strong>Espacio en disco:</strong> El journaling completo (data mode) requiere hasta un 20%
+                            más de espacio.</li>
+                    </ul>
 
-                    </p>
-
-                    <p class="card-text">
-                        El nodo-i y la organización de los archivos no permitirán que se pueda acceder a ningún tipo de
-                        fichero, por lo que no habrá la posibilidad para ser reasignados; simplemente quedarán en una
-                        especie de espacio, reduciendo la eficiencia del sistema.
-
-                    </p>
-
-                    <p class="card-text">
-                        <strong>Figura 13.</strong>
-                    </p>
-                    <p class="card-text">
-                        <i>Sistema de archivos NTFS presente en Windows 10.</i>
-                    </p>
-
-
-                    <div class="text-center">
-                        <img src="../images/figura8.png" alt="Figura 13" class="img-fluid">
-                    </div>
+                    <p class="card-text"><strong>En conclusión:</strong> El journaling por bitácora/diario es un pilar
+                        en los sistemas de archivos modernos, equilibrando rendimiento e integridad. Aunque introduce
+                        overhead y complejidad, su capacidad para prevenir corrupción de datos lo hace indispensable en
+                        entornos críticos (servidores, bases de datos). Sistemas como NTFS y ext4 demuestran su eficacia
+                        en la práctica, mientras que alternativas como ReiserFS (Linux) resaltan la evolución de estas
+                        tecnologías.</p>
                 </div>
             </div>
         </section>

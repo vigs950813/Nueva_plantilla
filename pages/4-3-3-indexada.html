@@ -25,64 +25,74 @@
             <div class="card">
                 <h5 class="card-header">4.3.3 Indexada</h5>
                 <div class="card-body">
+                    <p class="card-text">Asignación Indexada (Linux Kernel Documentation, s. f., Ext 4; Silberschatz et
+                        al., 2018, p. 505).</p>
+
+                    <p class="card-text"><strong>Definición</strong></p>
+                    <p class="card-text">Utiliza un bloque índice que contiene punteros a todos los bloques de un
+                        archivo.</p>
+
+                    <p class="card-text"><strong>Funcionamiento</strong></p>
+                    <ol class="card-text">
+                        <li>El bloque índice se almacena en el inodo (UNIX/Linux) o en la MFT (NTFS).</li>
+                        <li>Soporta acceso aleatorio eficiente y archivos de gran tamaño mediante índices multinivel.
+                        </li>
+                    </ol>
+
+                    <p class="card-text"><strong>Ventajas</strong></p>
+                    <ul class="card-text">
+                        <li>Acceso aleatorio rápido: Los bloques se localizan directamente desde el índice.</li>
+                        <li>Escalabilidad: Admite archivos enormes con índices jerárquicos (ejemplo: ext4 con extents).
+                        </li>
+                    </ul>
+
+                    <p class="card-text"><strong>Desventajas</strong></p>
+                    <ul class="card-text">
+                        <li>Sobrecarga de metadatos: El bloque índice consume espacio adicional.</li>
+                        <li>Complejidad: Gestión de índices multinivel requiere más cálculos.</li>
+                    </ul>
+
+                    <p class="card-text"><strong>Ejemplo:</strong> Sistemas NTFS (Windows) y ext4 (Linux).</p>
+
+                    <p class="card-text">Tabla 1.</p>
+                    <p class="card-text"><em>Comparativa Resumida</em></p>
+                    <table class="card-text" border="1">
+                        <thead>
+                            <tr>
+                                <th>Método</th>
+                                <th>Ventajas</th>
+                                <th>Desventajas</th>
+                                <th>Caso de Uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Contigua</td>
+                                <td>Acceso rápido, simple</td>
+                                <td>Fragmentación externa, inflexibilidad</td>
+                                <td>Medios de solo lectura</td>
+                            </tr>
+                            <tr>
+                                <td>Ligada</td>
+                                <td>Sin fragmentación, flexible</td>
+                                <td>Acceso lento, sobrecarga de punteros</td>
+                                <td>Sistemas FAT, dispositivos USB</td>
+                            </tr>
+                            <tr>
+                                <td>Indexada</td>
+                                <td>Acceso aleatorio rápido, escalabilidad</td>
+                                <td>Sobrecarga de metadatos, complejidad</td>
+                                <td>Sistemas modernos (NTFS/ext4)</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <p class="card-text">
-                        La asignación por índices es hallada comúnmente en computadoras actuales, como los de UNIX, que
-                        utilizan inodos para almacenar punteros a los bloques de datos.
+                        La elección del método de asignación depende del equilibrio entre rendimiento, gestión de
+                        espacio y requisitos del sistema. Mientras la asignación contigua es óptima para entornos
+                        estáticos, la ligada prevalece en dispositivos removibles, y la indexada domina en sistemas
+                        modernos que priorizan velocidad y escalabilidad. Estudiar estos métodos permite diseñar
+                        sistemas de archivos eficientes adaptados a cargas de trabajo específicas.
 
-                    </p>
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header cardExample">Ventajas</h5>
-                <div class="card-body">
-                    <p class="card-text"><strong>Acceso directo:</strong> Se puede acceder rápidamente a cualquier
-                        bloque del archivo utilizando el bloque de índice, lo que mejora el rendimiento en comparación
-                        con la asignación ligada.</p>
-
-                    <p class="card-text"><strong>Expansión flexible:</strong> Los archivos pueden crecer sin necesidad
-                        de mover otros bloques, ya que el bloque de índice puede apuntar a bloques adicionales en
-                        cualquier lugar del disco.</p>
-
-                    <p class="card-text"><strong>Robustez:</strong> Si un bloque de datos se corrompe, los demás bloques
-                        no se ven afectados, ya que no están enlazados entre sí como en la asignación ligada.</p>
-
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header cardExample">Desventajas</h5>
-                <div class="card-body">
-                    <p class="card-text"><strong>Requiere un bloque de índice:</strong> Esto introduce una sobrecarga
-                        adicional, ya que se necesita espacio adicional para el bloque de índice.</p>
-
-                    <p class="card-text"><strong>Limitaciones de tamaño:</strong> Si el archivo es muy grande, puede ser
-                        necesario utilizar varios niveles de bloques de índice, lo que complica la gestión del archivo.
-                    </p>
-
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header cardExample">Ejemplo</h5>
-                <div class="card-body">
-                    <div class="card-text">
-                        Supongamos que un archivo está dividido en cinco bloques de datos. El sistema
-                        de archivos crea un bloque de índice con los punteros a estos bloques, lo que permite
-                        un acceso directo a cualquier bloque.
-                    </div>
-                    <div class="card-text">A continuación se presenta una imagen ilustrativa del ejemplo anterior</div>
-                    <p class="card-text">
-                        <strong>Figura 11.</strong>
-                    </p>
-                    <p class="card-text">
-                        <i>Bloques de datos enlistados.</i>
-                    </p>
-
-                    <div class="text-center">
-                        <img class="img-fluid" src="../images/figura6.png" alt="Figura 11">
-                    </div>
-
-                    <p class="card-text">
-                        Este método es muy eficiente para archivos grandes, donde el acceso aleatorio
-                        a los datos es importante.
                     </p>
                 </div>
             </div>

@@ -68,3 +68,26 @@
         font-size: 18px; /* Texto más pequeño para botones en pantallas reducidas */
     }
 }
+
+  table.card-text {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    text-align: left;
+  }
+  table.card-text th, table.card-text td {
+    border: 1px solid #ddddddab;
+    padding: 12px;
+  }
+  table.card-text th {
+    background-color: #f4f4f481;
+    font-weight: bold;
+    text-align: center;
+  }
+  table.card-text tr:nth-child(even) {
+    background-color: #f9f9f993;
+  }
+  table.card-text tr:hover {
+    background-color: #b6a9a9;
+  }
+

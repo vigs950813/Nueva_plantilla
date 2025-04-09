@@ -23,150 +23,36 @@
         <!-- Section 1 -->
         <section id="pageContentCard">
             <div class="card">
-                <h5 class="card-header">4.3.2 Ligada</h5>
+                <h5 class="card-header">4.3.2 Asignación Ligada (Enlazada)</h5>
                 <div class="card-body">
-                    <p class="card-text">También conocida como asignación enlazada, guarda los bloques de un archivo en
-                        cualquier ubicación del disco, y cada bloque incluye un puntero al siguiente, creando así una
-                        lista enlazada.</p>
+                    <p class="card-text">Asignación Ligada (Enlazada) (Tanenbaum & Woodhull, 2006, p.220; Microsoft,
+                        s.f.)</p>
 
-                    <p class="card-text">Este método permite que aquellos segmentos de un fichero se encuentren
-                        dispersos por el dispositivo de almacenamiento. Cada bloque contiene una referencia al
-                        siguiente, lo que facilita la lectura secuencial de los datos.</p>
+                    <p class="card-text"><strong>Definición</strong></p>
+                    <p class="card-text">Almacena archivos en bloques no contiguos, vinculados mediante punteros al
+                        siguiente bloque.</p>
 
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header cardExample">Ventajas</h5>
-                <div class="card-body">
-                    <div class="accordion" id="accordionPanelsStayOpenExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                    aria-controls="panelsStayOpen-collapseOne">
-                                    Adaptabilidad
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                                <div class="accordion-body">
-                                    <p class="card-text">
-                                        No requiere bloques contiguos, por lo que es más adecuado para discos
-                                        fragmentados o con espacios de varios tamaños.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                                    aria-controls="panelsStayOpen-collapseTwo">
-                                    Menor fragmentación externa
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    <p class="card-text">
-                                        Debido a que los bloques pueden ubicarse en cualquier parte, este método
-                                        disminuye la necesidad de desfragmentar.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header cardExample">Desventajas</h5>
-                <div class="card-body">
-                    <div class="accordion" id="accordionPanelsStayOpenExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
-                                    aria-controls="panelsStayOpen-collapseThree">
-                                    Acceso más lento
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
-                                <div class="accordion-body">
-                                    <p class="card-text">
-                                        La necesidad de recorrer cada bloque anterior para acceder a uno específico
-                                        genera un retraso debido al almacenamiento del puntero al siguiente bloque en
-                                        cada bloque del archivo.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
-                                    aria-controls="panelsStayOpen-collapseFour">
-                                    Mayor consumo de espacio
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    <p class="card-text">
-                                        El espacio extra necesario para los punteros disminuye el espacio útil
-                                        disponible para los datos
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
-                                    aria-controls="panelsStayOpen-collapseFive">
-                                    Problemas de confiabilidad
-                                </button>
-                            </h2>
-                            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    <p class="card-text">
-                                        Si un puntero se corrompe, los bloques siguientes pueden volverse inaccesibles,
-                                        resultando en la pérdida de acceso a parte o todo el archivo.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="card-text">
-                            Este enfoque es óptimo para sistemas en los que la simplicidad del almacenamiento es
-                            prioritaria sobre la rapidez de acceso, especialmente en dispositivos de almacenamiento
-                            antiguos o de menor rendimiento.
-                        </p>
+                    <p class="card-text"><strong>Funcionamiento</strong></p>
+                    <ol class="card-text">
+                        <li>Cada bloque contiene datos y un puntero al siguiente bloque.</li>
+                        <li>La tabla de asignación solo guarda la dirección del primer bloque.</li>
+                    </ol>
 
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header cardExample">Ejemplo</h5>
-                <div class="card-body">
-                    <div class="card-text">
-                        Si un archivo está almacenado en los bloques 4, 20, y 50, el primer bloque (4)
-                        contendrá un puntero al bloque 20, el bloque 20 contendrá un puntero al bloque
-                        50, y el bloque 50 indicará el final del archivo.
-                    </div>
-                    <div class="card-text">A continuación se presenta una imagen ilustrativa del ejemplo anterior</div>
-                    <p class="card-text">
-                        <strong>Figura 10.</strong>
-                    </p>
-                    <p class="card-text">
-                        <i>Ejemplo de archivos enlistados.</i>
-                    </p>
+                    <p class="card-text"><strong>Ventajas</strong></p>
+                    <ul class="card-text">
+                        <li>Sin fragmentación externa: El espacio libre se aprovecha completamente.</li>
+                        <li>Flexibilidad: Los archivos pueden crecer dinámicamente sin reubicación.</li>
+                    </ul>
 
+                    <p class="card-text"><strong>Desventajas</strong></p>
+                    <ul class="card-text">
+                        <li>Acceso secuencial obligatorio: Lectura aleatoria lenta (debe seguirse la cadena de
+                            punteros).</li>
+                        <li>Sobrecarga de espacio: Cada bloque reserva espacio para el puntero (ejemplo: 4 bytes en
+                            FAT32).</li>
+                    </ul>
 
-                    <div class="text-center">
-                        <img class="img-fluid" src="../images/figura5.png" alt="Figura 10">
-                    </div>
-
-                    <p class="card-text">
-                        Este enfoque es óptimo para sistemas en los que la simplicidad del almacenamiento es prioritaria
-                        sobre la rapidez de acceso, especialmente en dispositivos de almacenamiento antiguos o de menor
-                        rendimiento.
-                    </p>
+                    <p class="card-text"><strong>Ejemplo:</strong> Sistemas FAT32 (File Allocation Table).</p>
                 </div>
             </div>
         </section>
