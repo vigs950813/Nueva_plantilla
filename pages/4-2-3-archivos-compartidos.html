@@ -26,48 +26,52 @@
                 <h5 class="card-header">4.2.3 Archivos compartidos</h5>
                 <div class="card-body">
                     <p class="card-text">
-                        La compartición de archivos es fundamental en sistemas multiusuario o en redes, donde múltiples
-                        usuarios y aplicaciones pueden necesitar acceder al mismo archivo simultáneamente. La
-                        implementación de archivos compartidos enfrenta desafíos como la gestión de permisos, la
-                        sincronización de acceso y la coherencia de los datos.
-                    </p>
-                    <p class="card-text"><strong>Enlaces duros (hard links):</strong> Un enlace duro es una referencia
-                        en el sistema de archivos que señala la misma ubicación en el disco que otro archivo. Ambos
-                        archivos tienen el mismo nombre para el sistema, por lo que cualquier cambio en uno se refleja
-                        en el otro. Sin embargo, estos enlaces solo pueden crearse dentro del mismo sistema de archivos.
+                        Los archivos compartidos permiten que múltiples usuarios o procesos accedan a un mismo recurso
+                        en un sistema.
+                        Esta funcionalidad se gestiona mediante mecanismos como enlaces duros, enlaces simbólicos y
+                        control de acceso concurrente.
                     </p>
 
-                    <p class="card-text"><strong>Ejemplo:</strong> A continuación, se presenta un ejemplo ilustrativo de
-                        enlace duro en Linux usando el comando <code>ln</code>, ambos archivos comparten el mismo
-                        contenido. El archivo1.txt y enlace_duro.txt son dos nombres que apuntan al mismo contenido en
-                        el disco.</p>
+                    <p class="card-text"><strong>Enlaces Duros (Hard Links) (Silberschatz et al., 2018, p.
+                            487).</strong></p>
+                    <p class="card-text">
+                        Un enlace duro es una entrada directa en el sistema de archivos que apunta a los datos físicos
+                        de un archivo.
+                        Todos los enlaces duros comparten el mismo inodo (metadatos), por lo que son indistinguibles del
+                        archivo original.
+                        Solo pueden crearse dentro del mismo sistema de archivos.
+                    </p>
+                    <p class="card-text"><strong>Características clave:</strong></p>
+                    <ul class="card-text">
+                        <li>No consumen espacio adicional en disco.</li>
+                        <li>Si se elimina un enlace duro, los datos persisten hasta que todos los enlaces sean borrados.
+                        </li>
+                    </ul>
 
-                    <p class="card-text"><strong>Enlaces simbólicos (soft links o symlinks):</strong> Los enlaces
-                        simbólicos son archivos que actúan como referencias a otros archivos o directorios. A diferencia
-                        de los enlaces duros, los enlaces simbólicos pueden apuntar a archivos en diferentes sistemas de
-                        archivos o discos. No obstante, si el archivo original se elimina, el enlace simbólico se vuelve
-                        inválido, conocido como un enlace roto.</p>
+                    <p class="card-text"><strong>Enlaces Simbólicos (Soft Links o Symlinks)</strong></p>
+                    <p class="card-text">
+                        Un enlace simbólico es un archivo especial que contiene una ruta (absoluta o relativa) a otro
+                        archivo o directorio.
+                        A diferencia de los enlaces duros, estos pueden apuntar a ubicaciones en diferentes sistemas de
+                        archivos.
+                    </p>
+                    <p class="card-text"><strong>Características clave:</strong></p>
+                    <ul class="card-text">
+                        <li>Si se elimina el archivo original, el enlace simbólico se vuelve inválido (dangling link).
+                        </li>
+                        <li>Consumen espacio adicional (almacenan la ruta).</li>
+                    </ul>
 
-                    <p class="card-text"><strong>Ejemplo:</strong> A continuación, se presenta un ejemplo de uso del
-                        comando <code>ln -s</code>. Dado que enlace_simbolico.txt apunta a archivo1.txt. Si se elimina
-                        archivo1.txt, el enlace simbólico quedará roto.</p>
-
-                    <p class="card-text"><strong>Control de acceso concurrente:</strong> Cuando varios usuarios o
-                        procesos acceden simultáneamente a un archivo compartido, el sistema de archivos utiliza
-                        mecanismos como los bloqueos de archivos (file locks) para evitar conflictos y garantizar la
-                        coherencia de los datos. Estos bloqueos pueden ser de lectura o escritura, asegurando que otros
-                        procesos no puedan modificar el archivo mientras está bloqueado. En Linux, se utiliza la función
-                        <code>flock()</code> para bloquear un archivo y garantizar que solo un proceso pueda escribir en
-                        él en un momento dado.</p>
-
-                    <p class="card-text"><strong>Conclusión:</strong> La implementación del sistema de archivos incluye
-                        la gestión eficiente de archivos, directorios y archivos compartidos. El sistema operativo debe
-                        equilibrar el uso del espacio en disco, el rendimiento y la coherencia de los datos para
-                        garantizar un acceso rápido y seguro a la información. Métodos como la asignación contigua,
-                        enlazada e indexada ayudan a gestionar eficientemente los archivos, mientras que los directorios
-                        jerárquicos facilitan la organización de los datos. La compartición de archivos se logra
-                        mediante enlaces duros, simbólicos y mecanismos de control de acceso concurrente, permitiendo la
-                        colaboración entre usuarios y procesos.</p>
+                    <p class="card-text"><strong>Control de Acceso Concurrente (Silberschatz et al., 2018, p.
+                            552).</strong></p>
+                    <p class="card-text">
+                        Mecanismo para gestionar accesos simultáneos a un archivo, evitando inconsistencias. Estrategias
+                        comunes incluyen:
+                    </p>
+                    <ul class="card-text">
+                        <li>Bloqueos (locks): Exclusivos (escritura) o compartidos (lectura).</li>
+                        <li>Semáforos: Sincronizan procesos en sistemas UNIX.</li>
+                    </ul>
 
                 </div>
             </div>

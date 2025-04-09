@@ -25,100 +25,47 @@
             <div class="card">
                 <h5 class="card-header">4.3.1 Contigua</h5>
                 <div class="card-body">
-                    <p class="card-text">La asignación contigua es uno de los métodos más sencillos para almacenar
-                        archivos en el disco. En este esquema, se asigna a cada fichero una serie de bloques
-                        consecutivos en el disco. Esto permite un acceso rápido y eficiente, ya que la lectura
-                        secuencial no requiere saltar entre diferentes áreas del disco. Sin embargo, este método tiene
-                        varios inconvenientes, como la fragmentación externa y la dificultad para encontrar bloques
-                        contiguos lo suficientemente grandes para archivos que crecen con el tiempo.</p>
-
-                    <p class="card-text">En la asignación contigua, los ficheros se resguardan en bloques adyacentes en
-                        el dispositivo de almacenamiento, de manera similar a reservar una fila de asientos consecutivos
-                        en un cine. Este método permite que la lectura del archivo sea extremadamente rápida, ya que los
-                        datos se acceden de manera secuencial sin interrupciones.</p>
-
-                    <p class="card-text">Además, localizar cualquier parte del archivo es sencillo; solo necesitas
-                        conocer el punto de inicio y la cantidad total de bloques que ocupa, como se ilustra en la
-                        Figura 8.</p>
-
-
+                    <p class="card-text"><strong>Asignación Contigua (Silberschatz, Galvin &amp; Gagne, 2018,
+                            p.500)</strong></p>
+                    <p class="card-text"><strong>Definición</strong></p>
                     <p class="card-text">
-                        <strong>Figura 8.</strong>
-                    </p>
-                    <p class="card-text">
-                        <i>Directorios.</i>
+                        Almacena archivos en bloques de disco consecutivos. Cada archivo ocupa una secuencia continua de
+                        sectores.
                     </p>
 
-                    <div class="text-center">
-                        <img src="../images/eed51909-5eb6-4e92-ba55-e3f85c53e56e.jpg" alt="Figura" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header cardExample">Ventajas</h5>
-                <div class="card-body">
-                    <p class="card-text"><strong>Acceso rápido:</strong> Los archivos se pueden leer de manera
-                        secuencial sin interrupciones, lo que mejora la velocidad de acceso, especialmente en
-                        operaciones de lectura secuencial.</p>
+                    <p class="card-text"><strong>Funcionamiento</strong></p>
+                    <ul class="card-text">
+                        <li>Se requiere especificar el tamaño del archivo al crearlo (ejemplo histórico: sistemas de
+                            cintas magnéticas).</li>
+                        <li>La tabla de asignación registra la dirección inicial y la longitud del archivo.</li>
+                    </ul>
 
-                    <p class="card-text"><strong>Fácil de implementar:</strong> El sistema solo necesita conocer la
-                        dirección del primer bloque y la longitud del archivo para acceder a todos los datos.</p>
+                    <p class="card-text"><strong>Ventajas</strong></p>
+                    <ul class="card-text">
+                        <li>Acceso rápido: Lectura secuencial eficiente (ideal para medios como CD-ROM).</li>
+                        <li>Baja sobrecarga de metadatos: Solo se almacena la dirección inicial y el tamaño.</li>
+                    </ul>
 
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header cardExample">Desventajas</h5>
-                <div class="card-body">
-                    <p class="card-text"><strong>Fragmentación externa:</strong> A medida que los archivos se crean y
-                        eliminan, puede resultar un reto hallar un espacio contiguo lo suficientemente grande para
-                        nuevos archivos o archivos que crecen.</p>
+                    <p class="card-text"><strong>Desventajas</strong></p>
+                    <ul class="card-text">
+                        <li>Fragmentación externa: Espacio libre disperso entre archivos, reduciendo la capacidad de
+                            almacenamiento.</li>
+                        <li>Dificultad para expandir archivos: Requiere reubicación si no hay espacio contiguo
+                            disponible.</li>
+                    </ul>
 
-                    <p class="card-text"><strong>Espacio desperdiciado:</strong> Se utiliza frecuentemente en sistemas
-                        de archivos más antiguos, como el sistema FAT (Tabla de Asignación de Archivos) de las primeras
-                        versiones de Windows.</p>
+                    <p class="card-text"><strong>Ejemplo</strong></p>
+                    <p class="card-text">Sistemas antiguos como IBM OS/360.</p>
 
-                    <p class="card-text"><strong>Nota:</strong> Este tipo de asignación es especialmente adecuada para
-                        sistemas que necesitan acceder rápidamente y de manera secuencial a archivos que son de tamaño
-                        fijo o que tienen pocos cambios.</p>
-
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header cardExample">Ejemplo</h5>
-                <div class="card-body">
-                    <div class="card-text">
-                        Supongamos que un archivo necesita ocupar 4 bloques consecutivos en el
-                        disco y el sistema de archivos utiliza bloques de 1 KB. Si los bloques 5, 6, 7 y 8
-                        están libres, se pueden asignar contiguamente para almacenar el archivo. Sin
-                        embargo, si más tarde se necesita ampliar el archivo y los bloques consecutivos
-                        ya no están disponibles, será necesario trasladar todo el archivo a una nueva
-                        ubicación.
-                    </div>
-                    <p class="card-text">A continuación se presenta una imagen ilustrativa del ejemplo anterior.</p>
                     <p class="card-text">
-                        <strong>Figura 9.</strong>
+                        <strong>Figura 4.</strong>
                     </p>
                     <p class="card-text">
-                        <i>Ejemplo de asignación de espacio.</i>
-                    </p>
-                    <div class="text-center">
-                        <img class="img-fluid" src="../images/figura4.png" alt="Figura 9">
-                    </div>
-
-                    <p class="card-text">
-                        En caso de requerir más información sobre el tema, se proporciona el siguiente material
-                        audiovisual.
-                    </p>
-
-                    <p class="card-text">
-                        <strong>(2024b). Métodos de asignación de espacio</strong>
+                        <i>Asignación Contigua de espacio en disco (Silberschatz, Galvin & Gagne, 2018, p. 573).</i>
                     </p>
 
                     <div class="text-center">
-                        <iframe style="width: 50rem; height: 40rem;" src="https://www.youtube.com/embed/g-bhPcGNRog"
-                            title="Metodos de Asignacion de Espacio" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <img src="../images/eed51909-5eb6-4e92-ba55-e3f85c53e56e.jpg" alt="Figura 4" class="img-fluid">
                     </div>
                 </div>
             </div>

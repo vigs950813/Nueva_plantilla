@@ -25,34 +25,84 @@
                 <h5 class="card-header">4.2.2 De directorios</h5>
                 <div class="card-body">
                     <p class="card-text">
-                        Los directorios son cruciales para la organización de archivos, proporcionando una estructura
-                        jerárquica que agrupa archivos en carpetas y subcarpetas. Cada directorio incluye entradas que
-                        representan archivos y subdirectorios, facilitando la navegación por el sistema de archivos.
+                        Los directorios son estructuras fundamentales en los sistemas operativos, ya que permiten
+                        organizar y gestionar archivos de manera eficiente.
+                        Su implementación varía según el diseño del sistema de archivos, pudiendo adoptar estructuras
+                        planas, jerárquicas o basadas en tablas hash.
+                        Se analizan estos tres esquemas de directorios, sus ventajas, desventajas y aplicaciones.
                     </p>
+
+                    <p class="card-text"><strong>1. Directorios Planos (Simples)</strong></p>
                     <p class="card-text">
-                        Existen diferentes maneras de implementar los directorios:
+                        Un directorio plano almacena todos los archivos en una única lista sin subdivisión, común en
+                        sistemas antiguos o embebidos.
                     </p>
-                    <p class="card-text"><strong>Directorios simples o planos:</strong> En este método, todos los
-                        archivos y carpetas están al mismo nivel sin una estructura jerárquica. Es fácil de implementar,
-                        pero no es práctico para sistemas grandes ya que encontrar archivos se vuelve difícil y pueden
-                        surgir conflictos al gestionar los nombres de los archivos.</p>
+                    <p class="card-text"><strong>Características:</strong></p>
+                    <ul class="card-text">
+                        <li>Estructura lineal: Todos los archivos están en el mismo nivel (Silberschatz et al., 2018, p.
+                            485).</li>
+                        <li>Sin subdirectorios: No permite organización jerárquica.</li>
+                    </ul>
+                    <p class="card-text"><strong>Ventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>Simplicidad: Fácil implementación y bajo overhead.</li>
+                        <li>Acceso rápido: Búsqueda directa sin navegación compleja.</li>
+                    </ul>
+                    <p class="card-text"><strong>Desventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>Limitaciones de escalabilidad: Dificulta la gestión con miles de archivos (Tanenbaum &amp;
+                            Bos, 2015, p. 320).</li>
+                        <li>Colisiones de nombres: No permite archivos con el mismo nombre.</li>
+                    </ul>
 
-                    <p class="card-text"><strong>Ejemplo:</strong> En un sistema con directorios planos, todos los
-                        archivos del sistema podrían estar en una sola carpeta.</p>
+                    <p class="card-text"><strong>2. Directorios Jerárquicos</strong></p>
+                    <p class="card-text">
+                        Estructura en árbol con directorios y subdirectorios, utilizada en sistemas modernos (ej.
+                        Windows, Linux).
+                    </p>
+                    <p class="card-text"><strong>Características:</strong></p>
+                    <ul class="card-text">
+                        <li>Organización en niveles: Directorios padre-hijo para clasificar archivos (Stallings, 2018,
+                            p. 553).</li>
+                        <li>Rutas absolutas/relativas: Ejemplo: /home/usuario/documentos.</li>
+                    </ul>
+                    <p class="card-text"><strong>Ventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>Escalabilidad: Soporta millones de archivos.</li>
+                        <li>Control de acceso: Permisos por directorio (Silberschatz et al., 2018, p. 487).</li>
+                    </ul>
+                    <p class="card-text"><strong>Desventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>Overhead adicional: Mayor complejidad en búsquedas.</li>
+                    </ul>
 
-                    <p class="card-text"><strong>Directorios jerárquicos:</strong> Este método es el más utilizado en
-                        los sistemas operativos actuales. Los archivos se organizan en una estructura jerárquica de
-                        carpetas y subcarpetas. Sistemas como Linux, Windows y macOS emplean este esquema, donde el
-                        directorio raíz (/) en Linux y C:\ en Windows contiene otros directorios que a su vez pueden
-                        tener más archivos y carpetas.</p>
+                    <p class="card-text"><strong>3. Directorios con Tablas Hash</strong></p>
+                    <p class="card-text">
+                        Emplean funciones hash para mapear nombres de archivos a ubicaciones, optimizando búsquedas.
+                    </p>
+                    <p class="card-text"><strong>Características:</strong></p>
+                    <ul class="card-text">
+                        <li>Hash → Dirección: Convierte el nombre en un índice para acceso rápido (Tanenbaum &amp; Bos,
+                            2015, p. 324).</li>
+                        <li>Manejo de colisiones: Usa listas enlazadas o rehashing.</li>
+                    </ul>
+                    <p class="card-text"><strong>Ventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>Tiempo de búsqueda constante (O(1)): Ideal para sistemas con muchos archivos.</li>
+                    </ul>
+                    <p class="card-text"><strong>Desventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>Sobrecarga por colisiones: Degradación del rendimiento si el hash no está optimizado.</li>
+                    </ul>
 
-                    <p class="card-text"><strong>Ejemplo:</strong> Una estructura jerárquica podría ser como la que se
-                        muestra en la siguiente figura.</p>
-
-                    <p class="card-text"><strong>Directorios hash:</strong> Algunos sistemas de archivos emplean tablas
-                        hash para almacenar entradas de directorios, lo que mejora el rendimiento al buscar archivos en
-                        directorios grandes gracias a la capacidad del hash de encontrar rápidamente la entrada
-                        correcta. Sin embargo, este método es más complejo de implementar y mantener.</p>
+                    <p class="card-text"><strong>Conclusión:</strong></p>
+                    <ul class="card-text">
+                        <li>Directorios planos: Adecuados para sistemas simples con pocos archivos.</li>
+                        <li>Jerárquicos: Estándar en sistemas generalistas por su equilibrio entre orden y rendimiento.
+                        </li>
+                        <li>Hash: Óptimos para entornos que priorizan velocidad de búsqueda (ejemplo: bases de datos).
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>

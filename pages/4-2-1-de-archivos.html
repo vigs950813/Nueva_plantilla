@@ -23,53 +23,88 @@
             <div class="card">
                 <h5 class="card-header">4.2.1 De archivos</h5>
                 <div class="card-body">
-                    <p class="card-text">La implementación de archivos trata sobre cómo el sistema operativo organiza y
-                        gestiona los archivos en el disco. Aunque un archivo no es más que una serie de bytes guardados
-                        en un dispositivo, el sistema operativo necesita mantener información adicional como el nombre
-                        del archivo, su tamaño, los permisos, las fechas en que fue creado y modificado, y su ubicación
-                        en el disco para poder acceder a él fácilmente.</p>
-                    <p class="card-text">Los archivos se almacenan en bloques de disco, y la forma en que estos bloques
-                        se asignan y organizan puede variar según el sistema de archivos. Hay tres métodos comunes de
-                        implementación:</p>
-                    <p class="card-text"><strong>Asignación contigua:</strong> Los datos se almacenan en el dispositivo
-                        en bloques uno detrás del otro, lo que permite acceder a ellos rápidamente sin necesidad de
-                        saltar entre partes del disco. Sin embargo, este método tiene un problema: con el tiempo, puede
-                        ser difícil encontrar un espacio grande y continuo para guardar nuevos archivos debido a la
-                        fragmentación del disco.</p>
+                    <p class="card-text">
+                        Los sistemas operativos organizan los archivos en directorios para facilitar su acceso y
+                        gestión. Según Silberschatz et al. (2018), un archivo es una colección de información
+                        relacionada almacenada en un dispositivo secundario, mientras que un directorio es una
+                        estructura que contiene referencias a archivos y otros directorios (p. 482).
+                    </p>
 
-                    <p class="card-text"><strong>Ejemplo:</strong> Este método de almacenamiento enlaza los bloques de
-                        un archivo mediante punteros, lo que significa que los bloques no tienen que estar juntos. Cada
-                        bloque tiene un puntero al siguiente, lo que facilita la organización del espacio en el disco.
-                        Sin embargo, esto hace que el acceso a los archivos sea más lento, ya que hay que seguir las
-                        direcciones de memoria de un bloque a otro. Por ejemplo, en sistemas operativos como Linux, los
-                        archivos y carpetas se organizan de forma jerárquica, similar a un árbol. La raíz de este
-                        sistema suele ser representada con "/", y debajo de él hay más directorios y archivos
-                        organizados de manera recursiva.</p>
+                    <p class="card-text"><strong>2.1 Asignación Contigua</strong></p>
+                    <p class="card-text">
+                        En este método, los archivos se almacenan en bloques contiguos del disco, lo que permite acceso
+                        rápido mediante aritmética de direcciones. Sin embargo, puede sufrir de fragmentación externa.
+                    </p>
+                    <blockquote class="card-text">
+                        "La asignación contigua es eficiente para acceso secuencial, pero puede llevar a un desperdicio
+                        de espacio debido a la fragmentación" (Tanenbaum &amp; Bos, 2015, p. 312).
+                    </blockquote>
+                    <p class="card-text"><strong>Ventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>Lectura secuencial rápida.</li>
+                        <li>Bajo overhead en metadatos.</li>
+                    </ul>
+                    <p class="card-text"><strong>Desventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>Fragmentación externa.</li>
+                        <li>Dificultad para expandir archivos.</li>
+                    </ul>
 
-                    <p class="card-text"><strong>Asignación enlazada:</strong> Este método de almacenamiento enlaza los
-                        bloques de un archivo mediante punteros, lo que significa que los bloques no tienen que estar
-                        juntos. Cada bloque tiene un puntero al siguiente, lo que facilita la organización del espacio
-                        en el disco. Sin embargo, esto hace que el acceso a los archivos sea más lento, ya que hay que
-                        seguir los punteros de un bloque a otro. Por ejemplo, en sistemas operativos como Linux, la
-                        estructura jerárquica se organiza en forma de árbol, donde el directorio raíz (/) es la raíz del
-                        sistema de archivos, y debajo de él se encuentran otros directorios y archivos organizados de
-                        manera recursiva.</p>
+                    <p class="card-text"><strong>2.2 Asignación Enlazada</strong></p>
+                    <p class="card-text">
+                        Cada bloque del archivo contiene un puntero al siguiente bloque, formando una lista enlazada. No
+                        hay fragmentación externa, pero el acceso aleatorio es ineficiente.
+                    </p>
+                    <blockquote class="card-text">
+                        "La asignación enlazada elimina la fragmentación externa, pero el acceso aleatorio es lento
+                        debido a la necesidad de recorrer la cadena de bloques" (Stallings, 2018, p. 567).
+                    </blockquote>
+                    <p class="card-text"><strong>Ventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>No hay fragmentación externa.</li>
+                        <li>Fácil expansión de archivos.</li>
+                    </ul>
+                    <p class="card-text"><strong>Desventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>Acceso secuencial lento.</li>
+                        <li>Overhead por almacenar punteros en cada bloque.</li>
+                    </ul>
 
-                    <p class="card-text"><strong>Ejemplo:</strong> Si un archivo está almacenado en los bloques 10, 25,
-                        y 100, el sistema almacena un puntero en el bloque 10 que apunta al bloque 25, y otro puntero en
-                        el bloque 25 que apunta al bloque 100. Para acceder a todo el archivo, el sistema debe seguir
-                        estos enlaces.</p>
+                    <p class="card-text"><strong>2.3 Asignación Indexada</strong></p>
+                    <p class="card-text">
+                        Utiliza un bloque índice que contiene punteros a todos los bloques del archivo, permitiendo
+                        acceso aleatorio eficiente.
+                    </p>
+                    <blockquote class="card-text">
+                        "La asignación indexada combina las ventajas de acceso rápido y manejo eficiente del espacio,
+                        aunque requiere almacenamiento adicional para los índices" (Silberschatz et al., 2018, p. 490).
+                    </blockquote>
+                    <p class="card-text"><strong>Ventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>Acceso aleatorio rápido.</li>
+                        <li>Sin fragmentación externa.</li>
+                    </ul>
+                    <p class="card-text"><strong>Desventajas:</strong></p>
+                    <ul class="card-text">
+                        <li>Overhead por almacenar bloques de índice.</li>
+                        <li>Puede requerir múltiples niveles de índices para archivos grandes.</li>
+                    </ul>
 
-                    <p class="card-text"><strong>Asignación indexada:</strong> Los sistemas de archivos modernos, como
-                        ext4, utilizan la asignación indexada, en la que un bloque especial (llamado bloque de índice o
-                        inodo) contiene los punteros a los bloques de datos del archivo. Esto permite un acceso más
-                        eficiente y elimina la necesidad de bloques contiguos o enlaces entre bloques de datos. La
-                        fragmentación se reduce considerablemente y se optimiza el acceso a los archivos.</p>
-
-                    <p class="card-text"><strong>Ejemplo:</strong> Supongamos que un archivo está almacenado en los
-                        bloques 5, 30, 45, y 70. El sistema de archivos crea un inodo que contiene punteros a estos
-                        bloques, y el sistema operativo accede directamente a los bloques a través del inodo.</p>
-
+                    <p class="card-text"><strong>Implementación de Directorios</strong></p>
+                    <p class="card-text">
+                        Los directorios pueden implementarse como:
+                    </p>
+                    <ul class="card-text">
+                        <li>Listas lineales: Simple pero ineficiente para búsquedas.</li>
+                        <li>Tablas hash: Acelera la búsqueda, pero requiere manejo de colisiones.</li>
+                        <li>Árboles B/B+: Usados en sistemas de archivos modernos para búsquedas rápidas (Tanenbaum
+                            &amp; Bos, 2015, p. 325).</li>
+                    </ul>
+                    <p class="card-text">
+                        La elección del método de implementación depende del tipo de acceso requerido (secuencial vs.
+                        aleatorio) y la eficiencia en el uso del espacio. Mientras que la asignación contigua es óptima
+                        para multimedia, la indexada es preferible en entornos con acceso aleatorio frecuente.
+                    </p>
                 </div>
             </div>
         </section>
