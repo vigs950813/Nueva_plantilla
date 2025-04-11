@@ -183,6 +183,37 @@
                             </tr>
                         </tbody>
                     </table>
+                    <p class="card-text">
+                        <strong>3. Estrategias de Optimización</strong>
+                    </p>
+                    <ul class="card-text">
+                        <li>
+                            <strong>Ajuste de Journaling:</strong>
+                            <ul class="card-text">
+                                <li><i>JFS/JFS2:</i> Usar <i>data=writeback</i> para cargas de escritura intensivas
+                                    (<i>IBM</i>, 2007, p. 15).</li>
+                                <li><i>GPFS:</i> Desactivar journaling en nodos de solo lectura (<i>Henson</i>, 2015, p.
+                                    40).</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Tamaño de Bloques:</strong>
+                            <ul class="card-text">
+                                <li><i>JFS2:</i> Bloques de 16 MB para bases de datos (<i>Smit</i>, 2010, p. 105).</li>
+                                <li><i>GPFS:</i> Bloques de 16 MB para archivos científicos (<i>IBM</i>, 2020, p. 9).
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Caché y Prefetching:</strong>
+                            <ul class="card-text">
+                                <li><i>AIX LVM:</i> Aumentar caché de LV para reducir accesos a disco (<i>IBM</i>, 2001,
+                                    p. 50).</li>
+                                <li><i>GPFS:</i> Habilitar prefetching agresivo en cargas secuenciales (<i>Henson</i>,
+                                    2015, p. 38).</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
