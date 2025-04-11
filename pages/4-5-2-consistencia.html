@@ -24,93 +24,179 @@
             <div class="card">
                 <h5 class="card-header">4.5.2 Consistencia</h5>
                 <div class="card-body">
-
                     <p class="card-text">
-                        La consistencia en sistemas de archivos se refiere a la capacidad de mantener una estructura y
-                        un estado confiables de los datos en todo momento, asegurando que los archivos y metadatos
-                        permanezcan íntegros y en un estado estable, incluso tras fallos o interrupciones. La
-                        consistencia es crucial para evitar problemas como la corrupción de archivos, pérdida de datos o
-                        conflictos en la información almacenada. La consistencia en sistemas de archivos se clasifica
-                        principalmente en dos tipos: consistencia fuerte y consistencia eventual, cada uno con sus
-                        propios beneficios y limitaciones.
-
-                    </p>
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header">Consistencia fuerte</h5>
-                <div class="card-body">
-
-                    <p class="card-text">
-                        La consistencia fuerte garantiza que las modificaciones de información sean visibles de
-                        inmediato para todos los usuarios y aplicaciones que acceden a él. Este modelo asegura que, una
-                        vez que una operación de escritura se completa, cualquier intento de lectura posterior refleje
-                        los datos actualizados. Es ideal para sistemas que requieren precisión y coherencia inmediata,
-                        como bases de datos transaccionales o sistemas que gestionan información crítica.
-
+                        Los sistemas de archivos distribuyen datos en múltiples nodos para garantizar disponibilidad y
+                        escalabilidad, pero esto introduce desafíos en la coherencia de los datos. Dos modelos
+                        destacados son la consistencia fuerte y la consistencia eventual, cada uno con beneficios y
+                        limitaciones específicas.
                     </p>
 
-                    <p class="card-text">
-                        <strong>Beneficios</strong>
-                    </p>
-
-                    <ul class="card-text">
-                        <li>Los datos siempre están actualizados y consistentes para todos los usuarios, eliminando
-                            conflictos o discrepancias
+                    <ol class="card-text">
+                        <li>
+                            <strong>Consistencia Fuerte</strong> (<i>Viewnext</i>, s. f., <i>LinkedIn</i>, s. f.).
+                            <ul class="card-text">
+                                <li>
+                                    <strong>Definición:</strong> Garantiza que todas las réplicas de un dato reflejen la
+                                    última actualización de forma inmediata. Si un usuario lee un dato, siempre obtendrá
+                                    la versión más reciente, independientemente del nodo consultado.
+                                </li>
+                                <li>
+                                    <strong>Mecanismos de Implementación:</strong>
+                                    <ul class="card-text">
+                                        <li>Transacciones <i>ACID</i>: Atomicidad, Consistencia, Aislamiento y
+                                            Durabilidad (ej. bases de datos relacionales).</li>
+                                        <li>Protocolos de consenso: Como <i>Two-Phase Commit</i> (2PC) o <i>Paxos</i>,
+                                            que sincronizan nodos antes de confirmar operaciones.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Beneficios:</strong>
+                                    <ul class="card-text">
+                                        <li>Integridad garantizada: Ideal para sistemas críticos (ej. transacciones
+                                            bancarias), donde la precisión es prioritaria.</li>
+                                        <li>Evita conflictos: Elimina lecturas obsoletas o incoherencias temporales.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Limitaciones:</strong>
+                                    <ul class="card-text">
+                                        <li>Alta latencia: La sincronización entre nodos ralentiza las operaciones.</li>
+                                        <li>Escalabilidad reducida: La coordinación estricta limita el crecimiento en
+                                            sistemas distribuidos.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Ejemplo:</strong> <i>Google Spanner</i> utiliza relojes atómicos para
+                                    mantener coherencia fuerte global.
+                                </li>
+                            </ul>
                         </li>
-                        <li>Es adecuado para aplicaciones que requieren una consistencia estricta y un control preciso
-                            de los datos
+                        <li>
+                            <strong>Consistencia Eventual</strong> (<i>LinkedIn</i>, s. f.).
+                            <ul class="card-text">
+                                <li>
+                                    <strong>Definición:</strong> Permite divergencias temporales entre réplicas,
+                                    asegurando que converjan a un estado coherente tras un período sin actualizaciones.
+                                    Prioriza disponibilidad y escalabilidad sobre la coherencia inmediata.
+                                </li>
+                                <li>
+                                    <strong>Mecanismos de Implementación:</strong>
+                                    <ul class="card-text">
+                                        <li>Replicación asincrónica: Las actualizaciones se propagan en segundo plano.
+                                        </li>
+                                        <li>Técnicas de resolución de conflictos: Como <i>CRDTs</i> (tipos de datos
+                                            replicados sin conflictos) o algoritmos de votación.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Beneficios:</strong>
+                                    <ul class="card-text">
+                                        <li>Alta disponibilidad: Los nodos responden incluso en fallos de red o
+                                            particiones.</li>
+                                        <li>Escalabilidad horizontal: Admite grandes volúmenes de datos y usuarios sin
+                                            degradación.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Limitaciones:</strong>
+                                    <ul class="card-text">
+                                        <li>Incoherencias temporales: Los usuarios pueden ver datos desactualizados.
+                                        </li>
+                                        <li>Complejidad en resolución de conflictos: Requiere lógica adicional para
+                                            manejar versiones divergentes.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Ejemplo:</strong> <i>Amazon DynamoDB</i> usa <i>last-write-wins</i> para
+                                    resolver conflictos en réplicas.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p class="card-text">Tabla 3.</p>
+                    <p class="card-text"><em>Comparación y Contextos de Uso (Slideshare, 2022).</em></p>
+                    <table class="card-text" border="1">
+                        <thead>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>Consistencia Fuerte</th>
+                                <th>Consistencia Eventual</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Prioridad</td>
+                                <td>Precisión (ej. finanzas, salud)</td>
+                                <td>Disponibilidad (ej. redes sociales, IoT)</td>
+                            </tr>
+                            <tr>
+                                <td>Latencia</td>
+                                <td>Alta</td>
+                                <td>Baja</td>
+                            </tr>
+                            <tr>
+                                <td>Escalabilidad</td>
+                                <td>Limitada</td>
+                                <td>Alta</td>
+                            </tr>
+                            <tr>
+                                <td>Complejidad</td>
+                                <td>Protocolos rígidos (ej. 2PC)</td>
+                                <td>Técnicas flexibles (ej. CRDTs)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="card-text">
+                        <strong>Elección según Casos de Uso:</strong>
+                    </p>
+                    <ul class="card-text">
+                        <li>
+                            <strong>Consistencia fuerte:</strong> Transacciones financieras, sistemas de reservas.
+                            (<i>LinkedIn</i>, s. f.).
+                        </li>
+                        <li>
+                            <strong>Consistencia eventual:</strong> Registro de <i>logs</i>, preferencias de usuario en
+                            aplicaciones <i>web</i>.
                         </li>
                     </ul>
 
                     <p class="card-text">
-                        <strong>Limitaciones</strong>
+                        <strong>Técnicas para Mitigar Limitaciones</strong> (<i>LinkedIn</i>, s. f.):
                     </p>
-
-                    <ul class="card-text">
-                        <li>La consistencia fuerte suele requerir sincronización constante, lo cual puede reducir el
-                            rendimiento del sistema, especialmente en entornos distribuidos</li>
-                        <li>Este modelo puede ser difícil de escalar en sistemas de archivos grandes y distribuidos
+                    <ol class="card-text">
+                        <li>
+                            <strong>Patrones híbridos:</strong>
+                            <ul class="card-text">
+                                <li>
+                                    <strong>SAGAs:</strong> Coordinan transacciones largas mediante compensaciones en
+                                    caso de fallos (ej. <i>e-commerce</i>).
+                                </li>
+                                <li>
+                                    <strong>CQRS (Segregación de Responsabilidades de Consulta/Comando):</strong> Separa
+                                    lecturas y escrituras para optimizar rendimiento.
+                                </li>
+                            </ul>
                         </li>
-                    </ul>
-
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header">Consistencia eventual</h5>
-                <div class="card-body">
-
-                    <p class="card-text">
-                        La consistencia eventual es un modelo que permite que las copias de los datos se actualicen de
-                        forma independiente y asíncrona en sistemas distribuidos. En este modelo, las réplicas de datos
-                        pueden servir solicitudes de lectura y escritura sin necesidad de coordinarse constantemente
-                        entre ellas, mejorando así la disponibilidad y capacidad de respuesta del sistema. La
-                        consistencia eventual asegura que, en algún momento futuro, todas las copias de los datos
-                        convergerán hacia un mismo estado.
-
-                    </p>
+                        <li>
+                            <strong>Modelos de datos especializados:</strong>
+                            <ul class="card-text">
+                                <li>
+                                    <strong>CRDTs:</strong> Permiten fusión automática de datos sin conflictos (ej.
+                                    editores colaborativos).
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
 
                     <p class="card-text">
-                        <strong>Beneficios</strong>
+                        La elección entre consistencia fuerte y eventual depende de los requisitos de precisión,
+                        disponibilidad y escalabilidad del sistema. Mientras la consistencia fuerte asegura integridad
+                        absoluta, su rigidez limita aplicaciones distribuidas a gran escala. Por otro lado, la
+                        consistencia eventual ofrece flexibilidad y rendimiento, pero requiere manejar incoherencias
+                        temporales. El uso de patrones híbridos y modelos de datos avanzados permite equilibrar estas
+                        propiedades, adaptándose a contextos como microservicios o <i>Big Data</i>.
                     </p>
-
-                    <ul class="card-text">
-                        <li>Permite que los sistemas toleren fallas y particiones de red, lo cual es crucial en sistemas
-                            de gran escala</li>
-                        <li>Mejora la disponibilidad y capacidad de respuesta, ya que cada réplica puede operar de
-                            manera autónoma</li>
-                    </ul>
-
-                    <p class="card-text">
-                        <strong>Limitaciones</strong>
-                    </p>
-
-                    <ul class="card-text">
-                        <li>Puede provocar conflictos, lecturas de datos obsoletos o inconsistencias temporales entre
-                            réplicas</li>
-                        <li>No es adecuado para aplicaciones que requieren datos completamente actualizados en todo
-                            momento</li>
-                    </ul>
                 </div>
             </div>
         </section>

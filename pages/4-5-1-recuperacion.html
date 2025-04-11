@@ -25,76 +25,133 @@
                 <h5 class="card-header">4.5.1 Recuperación</h5>
                 <div class="card-body">
                     <p class="card-text">
-                        Para entender cómo recuperar archivos de un dispositivo, es importante saber cómo se guardan en
-                        ellos antes de que se pierdan. Es por eso que los sistemas organizan y estructuran dividiendo
-                        los dispositivos en su estructura de almacenamiento, como puede ser un disco duro físico en una
-                        o varias secciones independientes conocidas como particiones.
-
-                    </p>
-                    <p class="card-text">
-                        <strong>Figura 14.</strong>
-                    </p>
-                    <p class="card-text">
-                        <i>Registro de particiones.</i>
-                    </p>
-
-
-                    <div class="text-center">
-                        <a href="https://www.ecured.cu/images/0/04/Reg_a_princ.jpg" target="_blank"><img
-                                src="../images/figura9.png" alt="Figura 14" class="img-fluid"></a>
-                    </div>
-                    <p class="card-text">
-                        La información de archivos y organizador incluye un índice de fichero que guarda la
-                        identificación de este, así como los datos generales como puede ser su capacidad y datos de
-                        creación. Esta información también incluye la ubicación física exacta (dirección) dentro del
-                        dispositivo, por lo que generalmente se respalda en la propia unidad en caso de que la primera
-                        copia se encuentre deteriorada.
-
-                    <p class="card-text">
-                        Diversos ficheros utilizan distintos métodos para guardar sus datos. Por ejemplo, La Tabla de
-                        asignación de archivos (FAT), en donde se guardan estos datos, mientras que el sistema de
-                        archivos (NTFS) lo hace en un espacio asignado específicamente.
-
+                        Esta investigación explora los métodos de recuperación, estudios sobre la estructura de
+                        archivos/carpetas y técnicas de búsqueda eficiente, respaldados por referencias académicas y
+                        técnicas.
                     </p>
 
                     <p class="card-text">
-                        Es por ello por lo que una computadora requiere ingresar a un fichero, consulta los datos sobre
-                        el mismo y directorios para encontrar la identificación correspondiente, ya que lo encuentra
-                        determina su ubicación y abre el mismo.
-
+                        <strong>Métodos de Recuperación de Archivos</strong> (<i>Carrier</i>, 2005, pp. 150-165).
                     </p>
-                </div>
-            </div>
-            <div class="card">
-                <h5 class="card-header">Métodos de recuperación de archivos</h5>
-                <div class="card-body">
+                    <ol class="card-text">
+                        <li>
+                            Recuperación mediante Software
+                            <ul class="card-text">
+                                <li>
+                                    <strong>Definición:</strong> Uso de herramientas como <i>Recuva</i>, <i>TestDisk</i>
+                                    o <i>PhotoRec</i> para escanear el dispositivo y reconstruir archivos eliminados.
+                                </li>
+                                <li>
+                                    <strong>Funcionamiento:</strong>
+                                    <ul class="card-text">
+                                        <li><i>Análisis de metadatos</i>: Busca entradas en tablas como la <i>Master
+                                                File Table</i> (MFT) en <i>NTFS</i> o inodos en <i>ext4</i>.</li>
+                                        <li><i>Búsqueda de firmas de archivos</i> (<i>file carving</i>): Identifica
+                                            datos basándose en cabeceras únicas (ej. <i>FF D8 FF</i> para <i>JPEG</i>).
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Recuperación Forense (<i>Casey</i>, 2011, pp 210-225).
+                            <ul class="card-text">
+                                <li>
+                                    <strong>Definición:</strong> Técnicas avanzadas usadas en investigaciones legales o
+                                    corporativas para extraer datos incluso de dispositivos dañados.
+                                </li>
+                                <li>
+                                    <strong>Herramientas:</strong>
+                                    <ul class="card-text">
+                                        <li><i>EnCase</i>: Analiza sectores ocultos y particiones eliminadas.</li>
+                                        <li><i>FTK Imager</i>: Crea imágenes forenses del disco para evitar
+                                            modificaciones.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Recuperación Hardware (<i>Jones, Bejtlich &amp; Rose</i>, 2006, pp. 95-110).
+                            <ul class="card-text">
+                                <li>
+                                    <strong>Definición:</strong> Intervención física en dispositivos con fallos
+                                    mecánicos (ej. cabezales de disco dañados).
+                                </li>
+                                <li>
+                                    <strong>Proceso:</strong>
+                                    <ul class="card-text">
+                                        <li>Reparación en sala limpia: Reemplazo de componentes en entornos libres de
+                                            polvo.</li>
+                                        <li>Extracción directa de chips: Usado en <i>SSDs</i> o memorias <i>NAND</i>.
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+
                     <p class="card-text">
-                        Antes de analizar los distintos métodos de restauración de ficheros, es importante recordar una
-                        cosa: si se sobrescriben los datos del disco o dispositivo, los datos antiguos se perderán. No
-                        existen programas o métodos de recuperación de datos disponibles comercialmente que puedan
-                        recuperar sus datos. Por lo tanto, es muy importante no escribir archivos nuevos en el disco o
-                        dispositivo antes de la restauración de estos.
+                        <strong>Estudios de Información de Archivos y Carpetas</strong> (<i>Silberschatz et al.</i>,
+                        2018, pp. 480-485).
                     </p>
+                    <ol class="card-text">
+                        <li>
+                            <strong>Estructura de Archivos:</strong>
+                            <ul class="card-text">
+                                <li>Metadatos: Permisos, fechas, tamaño (almacenados en inodos o <i>MFT</i>).</li>
+                                <li>Datos: Contenido real del archivo (almacenado en bloques o clústeres).</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Comportamiento de Eliminación:</strong> (<i>Microsoft</i>, s. f., sección "File
+                            Deletion").
+                            <ul class="card-text">
+                                <li>Marcado de espacio libre: Los sistemas de archivos marcan los bloques como
+                                    disponibles, pero los datos persisten hasta ser sobrescritos.</li>
+                                <li>
+                                    Ejemplo: En <i>NTFS</i>, la entrada en la <i>MFT</i> se marca como no utilizada.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
 
                     <p class="card-text">
-                        Existen dos métodos de recuperación de archivos que a continuación se describen:
+                        <strong>Técnicas de Búsqueda para Recuperación</strong> (<i>Carrier</i>, 2005, p. 170).
                     </p>
-                    <!-- <p class="card-text">
-                        Para los archivos que no se han sobrescrito, existen dos métodos de recuperación de archivos.
-                        Todo el software de recuperación de datos utiliza una de estas técnicas o ambas.
-                        A continuación se presenta una lista de métodos de recuperación.
-                    </p> -->
+                    <ol class="card-text">
+                        <li>
+                            <strong>Búsqueda por Firmas:</strong>
+                            <ul class="card-text">
+                                <li>Definición: Identificación de archivos basada en patrones hexadecimales únicos (ej.
+                                    <i>PDF</i> inicia con <i>25 50 44 46</i>).</li>
+                                <li>Herramientas:</li>
+                                <ul class="card-text">
+                                    <li><i>PhotoRec</i>: Recupera más de 500 formatos de archivo.</li>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Análisis de Metadatos:</strong> (<i>Linux Kernel Documentation</i>, s. f., Ext.4).
+                            <ul class="card-text">
+                                <li>
+                                    Definición: Reconstrucción de la estructura de directorios mediante registros de
+                                    metadatos no sobrescritos.
+                                </li>
+                                <li>
+                                    Ejemplo: En <i>ext4</i>, los inodos eliminados pueden contener rutas originales.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
 
-                    <p class="card-text"><strong>Estudios de información de archivos y carpetas:</strong> Esta técnica
-                        trata de restaurar archivos analizando los datos relativos a archivos y directorios. Si tiene
-                        éxito, puede recuperar archivos junto con sus nombres, rutas, fechas y horas, y datos completos.
+                    <p class="card-text">
+                        <strong>Conclusión</strong><br> la recuperación de archivos depende de factores como el sistema
+                        de archivos, el tiempo transcurrido desde la eliminación y el tipo de daño. Métodos como el
+                        <i>file carving</i> y el análisis forense son efectivos si los datos no han sido sobrescritos.
+                        Estudiar la estructura de archivos y utilizar herramientas especializadas maximiza las
+                        posibilidades de éxito, especialmente en casos críticos (ej. datos empresariales o evidencia
+                        legal).
                     </p>
-
-                    <p class="card-text"><strong>Búsqueda de recuperación:</strong> Este método implica identificar
-                        tipos de archivos conocidos examinando el disco en busca de patrones específicos o "firmas" de
-                        archivos. Mediante esta técnica, se pueden localizar y recuperar archivos incluso si la
-                        información del directorio se ha perdido.</p>
-
                 </div>
             </div>
         </section>

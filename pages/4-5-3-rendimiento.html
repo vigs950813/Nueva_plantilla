@@ -24,19 +24,165 @@
             <div class="card">
                 <h5 class="card-header">4.5.3 Rendimiento</h5>
                 <div class="card-body">
+                    <p class="card-text">
+                        La configuración de los diferentes tipos de sistemas de archivos en <i>AIX®</i> influye
+                        considerablemente en el rendimiento general del sistema y, una vez instalado, resulta complicado
+                        modificarla. Obteniendo información detallada sobre ellos.
+                    </p>
+                    <p class="card-text">
+                        <i>AIX®</i> (<i>Advanced Interactive eXecutive</i>) es un sistema operativo <i>Unix</i>
+                        desarrollado por <i>IBM</i>, ampliamente utilizado en entornos empresariales y servidores de
+                        alto rendimiento. La configuración de sus sistemas de archivos impacta directamente en la
+                        eficiencia de operaciones de E/S, la integridad de datos y la escalabilidad.
+                    </p>
 
-                    <p class="card-text">La configuración de los diferentes tipos de sistemas de archivos en AIX®
-                        influye considerablemente en el rendimiento general del sistema y, una vez instalado, resulta
-                        complicado modificarla. Obteniendo información detallada sobre ellos.</p>
-
-                    <p class="card-text">AIX soporta dos tipos que son: locales y remotos. No obstante, hay ciertas
-                        circunstancias que pueden determinar cómo funcionan en su eficiencia, los sistemas de archivos
-                        de registro (JFS) y JFS2. Para mejorar el rendimiento, AIX ofrece diversas políticas y
-                        mecanismos ajustables.</p>
-
-                    <p class="card-text">El ritmo de entrada/salida (E/S) de disco está diseñado para evitar que
-                        programas que generan grandes volúmenes de salida sobrecarguen los recursos de E/S del sistema,
-                        lo que podría afectar el tiempo de respuesta de otros programas menos demandantes.</p>
+                    <ol class="card-text">
+                        <li>
+                            <strong>Sistemas de Archivos en <i>AIX</i></strong>
+                            <ul class="card-text">
+                                <li>
+                                    <strong>a) Journaled File System (<i>JFS</i>)</strong>
+                                    <ul class="card-text">
+                                        <li>
+                                            <strong>Definición:</strong> Sistema de archivos con journaling introducido
+                                            en <i>AIX</i> 3.1. Registra cambios en un diario (<i>journal</i>) para
+                                            garantizar consistencia tras fallos.
+                                        </li>
+                                        <li>
+                                            <strong>Características clave:</strong>
+                                            <ul class="card-text">
+                                                <li>Tamaño máximo de archivo: 64 GB.</li>
+                                                <li>Bloques de 4 KB a 128 KB.</li>
+                                                <li>Journaling de metadatos.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong>Configuración de rendimiento:</strong>
+                                            <ul class="card-text">
+                                                <li>Tamaño del <i>journal</i>: Un <i>journal</i> más grande reduce la
+                                                    frecuencia de escrituras (<i>IBM</i>, 2001, p. 45).</li>
+                                                <li>Asignación de bloques: Bloques grandes mejoran el rendimiento en
+                                                    archivos voluminosos (<i>Smit</i>, 2010, p. 89).</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong>Referencia:</strong> <i>IBM</i>. (2001). <i>AIX 5L Performance Tools
+                                                Handbook</i> (p. 45). <i>IBM Redbooks</i>.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>b) Enhanced Journaled File System (<i>JFS2</i>)</strong>
+                                    <ul class="card-text">
+                                        <li>
+                                            <strong>Definición:</strong> Evolución de <i>JFS</i> con soporte para
+                                            archivos y volúmenes más grandes (introducido en <i>AIX</i> 5.2).
+                                        </li>
+                                        <li>
+                                            <strong>Características clave:</strong>
+                                            <ul class="card-text">
+                                                <li>Tamaño máximo de archivo: 1 PB.</li>
+                                                <li>Bloques de 512 bytes a 16 MB.</li>
+                                                <li>Journaling opcional de datos (modo "data=ordered").</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong>Configuración de rendimiento:</strong>
+                                            <ul class="card-text">
+                                                <li>
+                                                    <strong>Modos de journaling:</strong>
+                                                    <ul class="card-text">
+                                                        <li><i>data=writeback</i>: Mejora velocidad al journalizar solo
+                                                            metadatos (<i>IBM</i>, 2007, p. 12).</li>
+                                                        <li><i>data=journal</i>: Mayor integridad, pero penaliza
+                                                            rendimiento.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Fragmentación dinámica: Uso de <i>extents</i> para reducir
+                                                    fragmentación (<i>Smit</i>, 2010, p. 102).</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong>Referencia:</strong> <i>IBM</i>. (2007). <i>AIX 6 Advanced Technical
+                                                Guide</i> (p. 12). <i>IBM Redbooks</i>.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>c) <i>IBM Spectrum Scale</i> (<i>GPFS</i>)</strong>
+                                    <ul class="card-text">
+                                        <li>
+                                            <strong>Definición:</strong> Sistema de archivos paralelo y distribuido
+                                            diseñado para <i>Big Data</i> y <i>HPC</i>.
+                                        </li>
+                                        <li>
+                                            <strong>Características clave:</strong>
+                                            <ul class="card-text">
+                                                <li>Escalabilidad horizontal: Sopeta petabytes de datos en clusters.
+                                                </li>
+                                                <li>Replicación sincrónica/asincrónica.</li>
+                                                <li>Caché distribuida.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong>Configuración de rendimiento:</strong>
+                                            <ul class="card-text">
+                                                <li>Tamaño de bloque: 16 MB recomendado para cargas de trabajo
+                                                    intensivas (<i>IBM</i>, 2020, p. 7).</li>
+                                                <li>Políticas de almacenamiento: <i>Tiering</i> automático entre
+                                                    <i>SSD</i> y <i>HDD</i>.
+                                                </li>
+                                                <li>Balanceo de carga: Distribución de datos en múltiples nodos
+                                                    (<i>Henson</i>, 2015, p. 34).</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <strong>Referencia:</strong> <i>Henson, V.</i> (2015). <i>GPFS
+                                                Essentials</i>. <i>IBM DeveloperWorks</i> (p. 34).
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p class="card-text">Tabla 4.</p>
+                    <p class="card-text"><em>Comparativa de Rendimiento.</em></p>
+                    <table class="card-text" border="1">
+                        <thead>
+                            <tr>
+                                <th>Parámetro</th>
+                                <th>JFS</th>
+                                <th>JFS2</th>
+                                <th>GPFS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tamaño máximo</td>
+                                <td>64 GB</td>
+                                <td>1 PB</td>
+                                <td>Exabytes</td>
+                            </tr>
+                            <tr>
+                                <td>Acceso concurrente</td>
+                                <td>Limitado</td>
+                                <td>Moderado</td>
+                                <td>Alto (clusters)</td>
+                            </tr>
+                            <tr>
+                                <td>Latencia</td>
+                                <td>Alta en <i>datos=journal</i></td>
+                                <td>Media</td>
+                                <td>Baja</td>
+                            </tr>
+                            <tr>
+                                <td>Caso de uso</td>
+                                <td>Entornos legacy</td>
+                                <td>Servidores empresariales</td>
+                                <td><i>Big Data</i>/<i>HPC</i></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
