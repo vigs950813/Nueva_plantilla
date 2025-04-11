@@ -36,7 +36,7 @@
                         <li>ext3/ext4 (Linux): Implementa journaling para metadatos y, opcionalmente, datos.</li>
                     </ul>
 
-                    <p class="card-text"><strong>Beneficios (Carrier, 2005, p. 125)</strong></p>
+                    <p class="card-text">Beneficios (Carrier, 2005, p. 125)</p>
                     <ul class="card-text">
                         <li><strong>Fiabilidad de datos:</strong> Registra cambios antes de ejecutarlos, evitando
                             corrupción en fallos inesperados.
@@ -51,9 +51,9 @@
                             (ej. write-ahead logging).</li>
                     </ul>
 
-                    <p class="card-text"><strong>Características (Silberschatz et al., 2018, p. 508)</strong></p>
+                    <p class="card-text">Características (Silberschatz et al., 2018, p. 508)</p>
                     <ul class="card-text">
-                        <li><strong>Modos de operación:</strong>
+                        <li><strong>Modos de operación</strong>
                             <ul class="card-text">
                                 <li>Write-ahead logging: Registra solo metadatos (ej. modo predeterminado en ext3).</li>
                                 <li>Ordered mode: Registra metadatos y datos en secuencia (equilibra velocidad y
@@ -65,7 +65,7 @@
                             separados del sistema de archivos principal.</li>
                     </ul>
 
-                    <p class="card-text"><strong>Limitaciones (Carrier, 2005, p.130)</strong></p>
+                    <p class="card-text">Limitaciones (Carrier, 2005, p.130)</p>
                     <ul class="card-text">
                         <li><strong>Overhead de rendimiento:</strong> El registro continuo consume recursos adicionales
                             (CPU, escrituras en disco).
@@ -79,7 +79,7 @@
                             más de espacio.</li>
                     </ul>
 
-                    <p class="card-text"><strong>En conclusión:</strong> El journaling por bitácora/diario es un pilar
+                    <p class="card-text"><strong>Conclusión</strong> <br>El journaling por bitácora/diario es un pilar
                         en los sistemas de archivos modernos, equilibrando rendimiento e integridad. Aunque introduce
                         overhead y complejidad, su capacidad para prevenir corrupción de datos lo hace indispensable en
                         entornos críticos (servidores, bases de datos). Sistemas como NTFS y ext4 demuestran su eficacia
