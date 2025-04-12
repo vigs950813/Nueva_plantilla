@@ -28,92 +28,75 @@
             gestionar los archivos de manera eficiente. Los bloques de datos almacenan la información de los archivos, y
             el acceso a estos datos se realiza a través de las estructuras de directorios.
           </p>
-          <p class="card-text">
-            <strong>Nomenclatura de archivos.</strong><br>
+          <p class="card-text"><strong>Nomenclatura de archivos</strong><br>
             Según Tanenbaum (1998), se refiere a cómo los archivos son nombrados, gestionados y accedidos en un sistema
             de archivos y se refiere a cómo los archivos son identificados, ubicados y organizados en el sistema de
             archivos. Un nombre de archivo es una cadena alfanumérica utilizada para identificar un archivo en el
             directorio, pero no contiene información sobre su ubicación física. La ruta de archivo describe su
-            ubicación, y puede ser:
-          </p>
-          <ul class="card-text">
-            <li>Absoluta (desde la raíz del sistema).</li>
-            <li>Relativa (en relación con el directorio actual).</li>
-          </ul>
-          <p class="card-text">
-            Cada archivo tiene un inodo asociado que almacena sus metadatos, pero no el nombre del archivo. Los
+            ubicación, y puede ser absoluta (desde la raíz del sistema) o relativa (en relación con el directorio
+            actual). Cada archivo tiene un inodo asociado que almacena sus metadatos, pero no el nombre del archivo. Los
             directorios son estructuras que vinculan los nombres de los archivos con sus inodos, facilitando su
-            localización. Existen convenciones como:
-          </p>
-          <ul class="card-text">
-            <li>La longitud del nombre.</li>
-            <li>El uso de extensiones para indicar el tipo de archivo.</li>
-            <li>La distinción entre mayúsculas y minúsculas en algunos sistemas.</li>
-          </ul>
-          <p class="card-text">
-            Finalmente, los archivos están organizados en una jerarquía de directorios en forma de árbol, lo que
-            facilita la navegación y la gestión de archivos.
-          </p>
-          <p class="card-text">
-            <strong>Estructura de archivos.</strong><br>
+            localización. Existen convenciones como la longitud del nombre, el uso de extensiones para indicar el tipo
+            de archivo, y la distinción entre mayúsculas y minúsculas en algunos sistemas. Finalmente, los archivos
+            están organizados en una jerarquía de directorios en forma de árbol, lo que facilita la navegación y la
+            gestión de archivos.</p>
+
+          <p class="card-text"><strong>Estructura de archivos</strong><br>
             De acuerdo con Tanenbaum (1998), la estructura de archivos se organiza en una jerarquía que permite
             almacenar y gestionar eficientemente los datos. Tanenbaum describe la estructura de archivos en términos de
-            las siguientes componentes principales:
-          </p>
-          <ol class="card-text">
-            <li>
-              <strong>Inodos (Inodes):</strong> Los inodos son estructuras de datos que almacenan metadatos sobre un
-              archivo, como su tamaño, las fechas de acceso y modificación, los permisos, el propietario y las
-              ubicaciones de los bloques de datos en el disco. Sin embargo, un inodo no contiene el nombre del archivo,
-              solo la información necesaria para acceder a su contenido.
-            </li>
-            <li>
-              <strong>Directorio (Directory):</strong> Los directorios son estructuras especiales que contienen una
-              lista de nombres de archivos y sus correspondientes referencias a inodos. Un directorio funciona como una
-              "tabla de contenido", que permite al sistema localizar un archivo mediante su nombre y, a través del
-              inodo, acceder a su contenido.
-            </li>
-            <li>
-              <strong>Superbloque (Superblock):</strong> El superbloque es una estructura clave que contiene información
-              crítica sobre el sistema de archivos, como el tamaño total del sistema de archivos, el número de bloques
-              libres, la ubicación de los bloques de inodos y la cantidad total de bloques de datos disponibles. Es
-              utilizado para gestionar la integridad y el espacio del sistema de archivos.
-            </li>
-            <li>
-              <strong>Bloques de Datos (Data Blocks):</strong> Los bloques de datos son unidades de almacenamiento donde
-              se guardan los datos reales de los archivos. Los archivos pueden estar distribuidos en uno o varios
-              bloques de datos en el disco, y el sistema de archivos gestiona cómo y dónde se almacenan estos bloques.
-            </li>
-            <li>
-              <strong>Estructura Jerárquica:</strong> Tanenbaum describe que los sistemas de archivos suelen organizarse
-              en una estructura jerárquica o en un árbol de directorios. La raíz del sistema de archivos es el punto de
-              inicio, y desde allí se ramifican los subdirectorios y archivos. Esta estructura facilita la navegación y
-              el acceso a los archivos.
-            </li>
-            <li>
-              <strong>Caché:</strong> Para mejorar el rendimiento, muchos sistemas de archivos utilizan caché para
-              almacenar los bloques de datos y los inodos más utilizados. De esta forma, se reducen los accesos a disco
-              y se incrementa la eficiencia.
-            </li>
-          </ol>
-          <p class="card-text">
-            <strong>Resumen de la estructura de archivos según Tanenbaum:</strong>
-          </p>
-          <ul class="card-text">
-            <li>Inodos: Contienen metadatos de archivos.</li>
-            <li>Directorios: Enlazan nombres de archivos con inodos.</li>
-            <li>Superbloque: Información general sobre el sistema de archivos.</li>
-            <li>Bloques de Datos: Donde se almacenan los datos de los archivos.</li>
-            <li>Jerarquía: Organización de archivos en una estructura de árbol.</li>
-            <li>Caché: Almacenamiento temporal para mejorar la eficiencia.</li>
+            las siguientes componentes principales:</p>
+
+          <ul>
+            <li class="card-text"><strong>Inodos (<i>Inodes</i>):</strong><br>
+              Los inodos son estructuras de datos que almacenan metadatos sobre un archivo, como su tamaño, las fechas
+              de acceso y modificación, los permisos, el propietario y las ubicaciones de los bloques de datos en el
+              disco. Sin embargo, un inodo no contiene el nombre del archivo, solo la información necesaria para acceder
+              a su contenido.</li>
+
+            <li class="card-text"><strong>Directorio (<i>Directory</i>):</strong><br>
+              Los directorios son estructuras especiales que contienen una lista de nombres de archivos y sus
+              correspondientes referencias a inodos. Un directorio funciona como una "tabla de contenido", que permite
+              al sistema localizar un archivo mediante su nombre y, a través del inodo, acceder a su contenido.</li>
+
+            <li class="card-text"><strong>Superbloque (<i>Superblock</i>):</strong><br>
+              El superbloque es una estructura clave que contiene información crítica sobre el sistema de archivos, como
+              el tamaño total del sistema de archivos, el número de bloques libres, la ubicación de los bloques de
+              inodos y la cantidad total de bloques de datos disponibles. Es utilizado para gestionar la integridad y el
+              espacio del sistema de archivos.</li>
+
+            <li class="card-text"><strong>Bloques de Datos (<i>Data Blocks</i>):</strong><br>
+              Los bloques de datos son unidades de almacenamiento donde se guardan los datos reales de los archivos. Los
+              archivos pueden estar distribuidos en uno o varios bloques de datos en el disco, y el sistema de archivos
+              gestiona cómo y dónde se almacenan estos bloques.</li>
+
+            <li class="card-text"><strong>Estructura Jerárquica:</strong><br>
+              Tanenbaum describe que los sistemas de archivos suelen organizarse en una estructura jerárquica o en un
+              árbol de directorios. La raíz del sistema de archivos es el punto de inicio, y desde allí se ramifican los
+              subdirectorios y archivos. Esta estructura facilita la navegación y el acceso a los archivos.</li>
+
+            <li class="card-text"><strong>Caché:</strong><br>
+              Para mejorar el rendimiento, muchos sistemas de archivos utilizan <i>caché</i> para almacenar los bloques
+              de datos y los inodos más utilizados. De esta forma, se reducen los accesos a disco y se incrementa la
+              eficiencia.</li>
           </ul>
-          <p class="card-text">
-            Esta estructura permite una gestión eficiente y flexible de archivos dentro de un sistema de archivos.
-          </p>
-          <p class="card-text">
-            Los archivos se pueden estructurar en una de varias formas. Tres posibilidades comunes se describen en la
-            Figura 1.
-          </p>
+
+          <p class="card-text"><strong>Resumen de la estructura de archivos según Tanenbaum:</strong></p>
+
+          <ul>
+            <li class="card-text"><strong>Inodos:</strong> Contienen metadatos de archivos.</li>
+            <li class="card-text"><strong>Directorios:</strong> Enlazan nombres de archivos con inodos.</li>
+            <li class="card-text"><strong>Superbloque:</strong> Información general sobre el sistema de archivos.</li>
+            <li class="card-text"><strong>Bloques de Datos:</strong> Donde se almacenan los datos de los archivos.</li>
+            <li class="card-text"><strong>Jerarquía:</strong> Organización de archivos en una estructura de árbol.</li>
+            <li class="card-text"><strong>Caché:</strong> Almacenamiento temporal para mejorar la eficiencia.</li>
+          </ul>
+
+          <p class="card-text">Esta estructura permite una gestión eficiente y flexible de archivos dentro de un sistema
+            de archivos.</p>
+
+          <p class="card-text">Los archivos se pueden estructurar en una de varias formas. Tres posibilidades comunes se
+            describen en la Figura 1.</p>
+
           <p class="card-text">
             <strong>Figura 1.</strong>
           </p>
@@ -124,125 +107,141 @@
           <p class="text-center">
             <img class="img-fluid" src="../images/figura_1.png" alt="Figura 1">
           </p>
-          <p class="card-text">
-            Tanenbaum, en su obra Sistemas Operativos: Diseño e Implementación, describe tres tipos principales de
-            archivos que se pueden encontrar en un sistema de archivos:
-          </p>
-          <ol class="card-text">
-            <li>
-              <strong>Archivos de Datos:</strong>
-              <p class="card-text">
-                <strong>Descripción:</strong> Son los archivos que contienen información que puede ser utilizada por los
-                usuarios o aplicaciones. Este tipo de archivo almacena los datos reales, como documentos, imágenes,
-                videos, y más.
-              </p>
-              <p class="card-text">
-                <strong>Ejemplo:</strong> Un archivo de texto (.txt), una imagen (.jpg), o un archivo de audio (.mp3).
-              </p>
-              <p class="card-text">
-                <strong>Características:</strong>
-              </p>
-              <ul class="card-text">
-                <li>Su contenido es accesible por los usuarios y programas.</li>
-                <li>Se puede leer, escribir o modificar dependiendo de los permisos asignados al archivo.</li>
+          <p class="card-text">Tanenbaum, en su obra <i>Sistemas Operativos: Diseño e Implementación</i>, describe tres
+            tipos principales de archivos que se pueden encontrar en un sistema de archivos:</p>
+
+          <ul>
+            <li class="card-text">
+              <strong>Archivos de Datos:</strong><br>
+              <strong>Descripción:</strong> Son los archivos que contienen información que puede ser utilizada por los
+              usuarios o aplicaciones. Este tipo de archivo almacena los datos reales, como documentos, imágenes,
+              videos, y más.<br>
+              <strong>Ejemplo:</strong> Un archivo de texto (<i>.txt</i>), una imagen (<i>.jpg</i>), o un archivo de
+              audio (<i>.mp3</i>).<br>
+              <strong>Características:</strong>
+              <ul>
+                <li class="card-text">Su contenido es accesible por los usuarios y programas.</li>
+                <li class="card-text">Se puede leer, escribir o modificar dependiendo de los permisos asignados al
+                  archivo.</li>
               </ul>
             </li>
-            <li>
-              <strong>Archivos de Programa:</strong>
-              <p class="card-text">
-                <strong>Descripción:</strong> Son los archivos que contienen programas ejecutables, es decir,
-                instrucciones o código que el sistema puede ejecutar.
-              </p>
-              <p class="card-text">
-                <strong>Ejemplo:</strong> Archivos ejecutables como .exe (en sistemas Windows), o programas binarios
-                como a.out en sistemas Unix/Linux.
-              </p>
-              <p class="card-text">
-                <strong>Características:</strong>
-              </p>
-              <ul class="card-text">
-                <li>Estos archivos contienen instrucciones que el sistema operativo puede cargar en memoria y ejecutar.
-                </li>
-                <li>Tienen permisos específicos que pueden permitir su ejecución (lectura, escritura, ejecución).</li>
+
+            <li class="card-text">
+              <strong>Archivos de Programa:</strong><br>
+              <strong>Descripción:</strong> Son los archivos que contienen programas ejecutables, es decir,
+              instrucciones o código que el sistema puede ejecutar.<br>
+              <strong>Ejemplo:</strong> Archivos ejecutables como <i>.exe</i> (en sistemas <i>Windows</i>), o programas
+              binarios como <i>a.out</i> en sistemas <i>Unix/Linux</i>.<br>
+              <strong>Características:</strong>
+              <ul>
+                <li class="card-text">Estos archivos contienen instrucciones que el sistema operativo puede cargar en
+                  memoria y ejecutar.</li>
+                <li class="card-text">Tienen permisos específicos que pueden permitir su ejecución (lectura, escritura,
+                  ejecución).</li>
               </ul>
             </li>
-            <li>
-              <strong>Archivos Especiales:</strong>
-              <p class="card-text">
-                <strong>Descripción:</strong> Son archivos que no contienen datos o programas directamente, sino que
-                sirven para representar dispositivos físicos u otros recursos del sistema operativo.
-              </p>
-              <p class="card-text">
-                <strong>Ejemplo:</strong> Archivos de dispositivos en sistemas Unix, como /dev/sda (dispositivo de
-                almacenamiento), /dev/tty (terminal) o /dev/null (sumidero de datos).
-              </p>
-              <p class="card-text">
-                <strong>Características:</strong>
-              </p>
-              <ul class="card-text">
-                <li>No son archivos en el sentido tradicional, ya que representan dispositivos o flujos de datos, y a
-                  menudo se accede a ellos mediante llamadas al sistema.</li>
-                <li>Permiten la interacción con hardware o periféricos como discos, impresoras, o puertos de
-                  comunicación.</li>
+
+            <li class="card-text">
+              <strong>Archivos Especiales:</strong><br>
+              <strong>Descripción:</strong> Son archivos que no contienen datos o programas directamente, sino que
+              sirven para representar dispositivos físicos u otros recursos del sistema operativo.<br>
+              <strong>Ejemplo:</strong> Archivos de dispositivos en sistemas <i>Unix</i>, como <i>/dev/sda</i>
+              (dispositivo de almacenamiento), <i>/dev/tty</i> (terminal) o <i>/dev/null</i> (sumidero de datos).<br>
+              <strong>Características:</strong>
+              <ul>
+                <li class="card-text">No son archivos en el sentido tradicional, ya que representan dispositivos o
+                  flujos de datos, y a menudo se accede a ellos mediante llamadas al sistema.</li>
+                <li class="card-text">Permiten la interacción con hardware o periféricos como discos, impresoras, o
+                  puertos de comunicación.</li>
               </ul>
             </li>
-          </ol>
-          <p class="card-text">
-            <strong>Resumen:</strong>
-          </p>
-          <ul class="card-text">
-            <li>Archivos de Datos: Contienen información de usuario o aplicación.</li>
-            <li>Archivos de Programa: Contienen código ejecutable para el sistema.</li>
-            <li>Archivos Especiales: Representan dispositivos o recursos del sistema operativo.</li>
           </ul>
-          <p class="card-text">
-            Estos tres tipos de archivos son fundamentales para el funcionamiento de un sistema operativo, cada uno con
-            un propósito distinto, pero todos gestionados dentro de la misma estructura de sistema de archivos.
-          </p>
-          <p class="card-text">
-            <strong>Tipos de archivos:</strong>
-          </p>
-          <p class="card-text">
-            Según Tanenbaum (2009, p. 260), numerosos sistemas operativos admiten distintos tipos de archivos. Por
-            ejemplo:
-          </p>
-          <ul class="card-text">
-            <li>UNIX y Windows manejan archivos regulares y directorios.</li>
-            <li>UNIX incluye archivos especiales de caracteres y bloques.</li>
-          </ul>
-          <p class="card-text">
-            Los archivos regulares suelen ser de tipo ASCII o binarios:
-          </p>
-          <ul class="card-text">
-            <li>
-              <strong>ASCII:</strong> Formados por líneas de texto que pueden ser editadas y leídas con facilidad.
+
+          <p class="card-text"><strong>Resumen</strong></p>
+          <ul>
+            <li class="card-text"><strong>Archivos de Datos:</strong> Contienen información de usuario o aplicación.
             </li>
-            <li>
-              <strong>Binarios:</strong> Contienen una estructura interna utilizada por los programas, pero no legibles
-              directamente.
+            <li class="card-text"><strong>Archivos de Programa:</strong> Contienen código ejecutable para el sistema.
             </li>
+            <li class="card-text"><strong>Archivos Especiales:</strong> Representan dispositivos o recursos del sistema
+              operativo.</li>
           </ul>
-          <p class="card-text">
-            Los archivos especiales de caracteres están asociados con dispositivos de entrada/salida, mientras que los
-            archivos especiales de bloques se usan para representar discos.
+
+          <p class="card-text">Estos tres tipos de archivos son fundamentales para el funcionamiento de un sistema
+            operativo, cada uno con un propósito distinto, pero todos gestionados dentro de la misma estructura de
+            sistema de archivos.</p>
+
+          <p class="card-text"><strong>Tipos de archivos</strong></p>
+
+          <p class="card-text">En Tanenbaum (2009, p. 260), se comenta que numerosos sistemas operativos admiten
+            distintos tipos de archivos. Por ejemplo, <i>UNIX</i> y <i>Windows</i> manejan archivos y directorios
+            regulares. Además, <i>UNIX</i> incluye archivos especiales de caracteres y bloques. Los archivos regulares
+            son aquellos que almacenan información del usuario, y todos los archivos representados en la figura 4-2 son
+            ejemplos de archivos regulares. Los directorios, por su parte, son estructuras dentro del sistema de
+            archivos que permiten mantener su organización. En esta sección, nos centraremos en los archivos regulares.
           </p>
-          <p class="card-text">
-            <strong>Acceso de archivos:</strong>
+
+          <p class="card-text">Los archivos especiales de caracteres están asociados con la entrada/salida y se utilizan
+            para representar dispositivos de E/S en serie, como terminales, impresoras y redes. Los archivos especiales
+            de bloques, en cambio, se emplean para representar discos.</p>
+
+          <p class="card-text">Los archivos regulares suelen ser de tipo <i>ASCII</i> o binarios. Los archivos
+            <i>ASCII</i> están formados por líneas de texto y, en algunos sistemas, cada línea termina con un carácter
+            de retorno de carro, mientras que en otros se utiliza el carácter de avance de línea, e incluso algunos
+            sistemas (como <i>MS-DOS</i>) emplean ambos. Las líneas no necesariamente deben tener la misma longitud.
           </p>
-          <p class="card-text">
-            En los primeros sistemas operativos, solo existía el acceso secuencial, adecuado para medios como cinta
-            magnética. Más tarde se introdujo el acceso aleatorio, esencial para aplicaciones como bases de datos. En
-            sistemas como UNIX y Windows, se utiliza una operación especial llamada seek para establecer la posición de
-            lectura.
+
+          <p class="card-text">La principal ventaja de los archivos <i>ASCII</i> es que pueden ser visualizados e
+            impresos tal como están, además de poder ser editados con cualquier editor de texto. Asimismo, como muchos
+            programas utilizan archivos <i>ASCII</i> para la entrada y salida, es sencillo conectar la salida de un
+            programa con la entrada de otro, como ocurre en las canalizaciones de <i>shell</i>. Aunque la conexión entre
+            procesos no sea fácil, la interpretación de la información se vuelve más accesible cuando se utiliza una
+            convención estándar como <i>ASCII</i>.</p>
+
+          <p class="card-text">Por otro lado, los archivos binarios simplemente no son archivos <i>ASCII</i>. Si se
+            listan en la impresora, muestran un conjunto incomprensible de caracteres. Generalmente, estos archivos
+            tienen una estructura interna conocida que es utilizada por los programas que los manejan.</p>
+
+          <p class="card-text"><strong>En resumen</strong></p>
+          <ul>
+            <li class="card-text">Los sistemas operativos, como <i>UNIX</i> y <i>Windows</i>, soportan varios tipos de
+              archivos, incluyendo archivos regulares, directorios y archivos especiales.</li>
+            <li class="card-text">Los archivos regulares contienen información del usuario y son principalmente de dos
+              tipos: <i>ASCII</i> (texto que puede ser leído y editado fácilmente) y binarios (estructurados de forma
+              interna y no legibles directamente).</li>
+            <li class="card-text">Los archivos especiales de caracteres modelan dispositivos de entrada/salida como
+              terminales e impresoras.</li>
+            <li class="card-text">Los archivos especiales de bloques se usan para representar discos.</li>
+            <li class="card-text">Los archivos <i>ASCII</i> son útiles porque pueden ser manipulados por múltiples
+              programas, facilitando la integración entre procesos.</li>
+            <li class="card-text">Los archivos binarios tienen una estructura interna específica para los programas que
+              los utilizan.</li>
+          </ul>
+
+          <p class="card-text"><strong>Acceso de archivos</strong></p>
+
+          <p class="card-text">En los primeros sistemas operativos, solo existía el acceso secuencial a los archivos, lo
+            que significa que los datos debían leerse en orden, desde el principio hasta el final, sin poder saltarse
+            partes. Este tipo de acceso era adecuado para medios como la cinta magnética. Sin embargo, con el uso de
+            discos, se introdujo el acceso aleatorio, que permite leer los registros en cualquier orden, lo que es
+            esencial para aplicaciones como bases de datos.</p>
+
+          <p class="card-text">Para determinar desde qué posición leer en un archivo, se pueden usar dos métodos: uno
+            donde cada operación de lectura especifica la posición, y otro, más común en sistemas como <i>UNIX</i> y
+            <i>Windows</i>, que usa una operación especial llamada <i>seek</i> para establecer la posición actual de
+            lectura (Tanenbaum, 2009, p.262).
           </p>
-          <p class="card-text">
-            <strong>Atributos de archivos:</strong>
-          </p>
-          <p class="card-text">
-            Además del nombre y el contenido, los sistemas operativos asocian metadatos como fecha, hora de última
-            modificación y tamaño. Los atributos de los archivos pueden variar significativamente entre sistemas
-            operativos.
-          </p>
+
+          <p class="card-text"><strong>Atributos de archivos</strong></p>
+
+          <p class="card-text">Cada archivo tiene un nombre y su contenido, pero los sistemas operativos también asocian
+            información adicional a cada archivo, como la fecha y hora de su última modificación y su tamaño. Estos
+            datos adicionales se conocen como atributos del archivo o metadatos. La lista de atributos puede variar
+            significativamente entre diferentes sistemas operativos. La tabla de la figura 4-4 presenta algunos
+            ejemplos, aunque existen otros atributos posibles. Ningún sistema incluye todos, pero cada uno tiene algunos
+            de ellos (Tanenbaum, 2009, p. 263).</p>
+
+
           <p class="card-text">
             <strong>Figura 2.</strong>
           </p>
@@ -250,65 +249,59 @@
             <i>Algunos posibles atributos de archivos, (Tananbaum, 2009, p. 263).
             </i>
           </p>
-          <p class="text-center">
-            <img class="img-fluid" src="../images/figura_2.png" alt="Figura 2">
+          <p class="card-text"><strong>Archivos en sistemas operativos</strong></p>
+
+          <p class="card-text">Muchos sistemas operativos permiten nombres de archivos compuestos por dos partes,
+            separadas por un punto, como en <i>"prog.c"</i>. La parte que sigue al punto se llama <strong>extensión del
+              archivo</strong> y generalmente proporciona información sobre su tipo. Por ejemplo, en <i>MS-DOS</i>, los
+            nombres de archivos pueden tener de 1 a 8 caracteres, seguidos por una extensión opcional de 1 a 3
+            caracteres. En <i>UNIX</i>, el tamaño de la extensión (si existe) es determinado por el usuario, y un
+            archivo puede tener varias extensiones, como en <i>"paginainicio.html.zip"</i>, donde <i>".html"</i> indica
+            que es una página web en HTML y <i>".zip"</i> señala que el archivo está comprimido con el programa zip. La
+            figura 3 muestra algunas de las extensiones más comunes y su significado (Tanenbaum, 2009, p. 258).</p>
+
+          <p class="card-text"><strong>Tipo Binario</strong></p>
+
+          <p class="card-text">Los archivos binarios, según Tanenbaum (2009), son aquellos que contienen datos en un
+            formato que no es legible para los humanos directamente, ya que están codificados en una secuencia de 1s y
+            0s (binario). A diferencia de los archivos de texto (como los archivos <i>ASCII</i>), los archivos binarios
+            tienen una estructura interna que debe ser interpretada por programas específicos que conocen ese formato.
           </p>
-          <p class="card-text">
-            <strong>Archivos en sistemas operativos:</strong><br>
-            Muchos sistemas operativos permiten nombres de archivos compuestos por dos partes, separadas por un punto,
-            como en "prog.c". La parte que sigue al punto se llama extensión del archivo y generalmente proporciona
-            información sobre su tipo. Por ejemplo:
-          </p>
-          <ul class="card-text">
-            <li>En MS-DOS, los nombres de archivos pueden tener de 1 a 8 caracteres, seguidos por una extensión opcional
-              de 1 a 3 caracteres.</li>
-            <li>En UNIX, el tamaño de la extensión (si existe) es determinado por el usuario, y un archivo puede tener
-              varias extensiones. Ejemplo: "paginainicio.html.zip", donde ".html" indica una página web en HTML y ".zip"
-              señala un archivo comprimido.</li>
-          </ul>
-          <p class="card-text">
-            La figura 3 muestra algunas de las extensiones más comunes y su significado (Tanenbaum, 2009, p. 258).
-          </p>
-          <p class="card-text">
-            <strong>Tipo Binario:</strong><br>
-            Los archivos binarios según Tanenbaum (2009) son aquellos que contienen datos en un formato que no es
-            legible para los humanos directamente, ya que están codificados en una secuencia de 1s y 0s (binario). A
-            diferencia de los archivos de texto (como los archivos ASCII), los archivos binarios tienen una estructura
-            interna que debe ser interpretada por programas específicos que conocen ese formato.
-          </p>
-          <p class="card-text">
-            <strong>Características de los archivos binarios según Tanenbaum:</strong>
-          </p>
-          <ul class="card-text">
-            <li><strong>No legibles por humanos:</strong> El contenido de los archivos binarios no es comprensible si se
-              abre en un editor de texto, ya que está representado en una forma que solo puede ser interpretada por el
-              programa adecuado.</li>
-            <li><strong>Estructura interna:</strong> Los archivos binarios tienen una estructura definida, que puede
-              incluir encabezados, metadatos y otros datos, dependiendo del tipo de archivo. Esta estructura es
-              entendida por el programa que los maneja.</li>
-            <li><strong>Tipos comunes:</strong>
-              <ul class="card-text">
-                <li>Archivos ejecutables (.exe, .bin): Contienen código que puede ser ejecutado directamente por el
-                  sistema operativo.</li>
-                <li>Archivos de imágenes (.jpg, .png): Contienen datos de imágenes en un formato comprimido o no
-                  comprimido.</li>
-                <li>Archivos de audio (.mp3, .wav): Contienen datos sonoros en formato binario.</li>
-                <li>Archivos comprimidos (.zip, .tar): Contienen otros archivos comprimidos para ahorrar espacio.</li>
-                <li>Archivos de bases de datos (.db, .sqlite): Almacenan información estructurada que es leída por
-                  sistemas de bases de datos.</li>
+
+          <p class="card-text"><strong>Características de los archivos binarios según Tanenbaum</strong></p>
+          <ul>
+            <li class="card-text"><strong>No legibles por humanos:</strong> El contenido de los archivos binarios no es
+              comprensible si se abre en un editor de texto, ya que está representado en una forma que solo puede ser
+              interpretada por el programa adecuado.</li>
+            <li class="card-text"><strong>Estructura interna:</strong> Los archivos binarios tienen una estructura
+              definida, que puede incluir encabezados, metadatos y otros datos, dependiendo del tipo de archivo. Esta
+              estructura es entendida por el programa que los maneja, como un procesador de imágenes o un reproductor de
+              audio.</li>
+            <li class="card-text"><strong>Tipos comunes:</strong> Los archivos binarios incluyen una amplia variedad de
+              formatos, como:
+              <ul>
+                <li class="card-text">Archivos ejecutables (<i>.exe, .bin</i>): Contienen código que puede ser ejecutado
+                  directamente por el sistema operativo.</li>
+                <li class="card-text">Archivos de imágenes (<i>.jpg, .png</i>): Contienen datos de imágenes en un
+                  formato comprimido o no comprimido.</li>
+                <li class="card-text">Archivos de audio (<i>.mp3, .wav</i>): Contienen datos sonoros en formato binario.
+                </li>
+                <li class="card-text">Archivos comprimidos (<i>.zip, .tar</i>): Contienen otros archivos que han sido
+                  comprimidos para ahorrar espacio.</li>
+                <li class="card-text">Archivos de bases de datos (<i>.db, .sqlite</i>): Almacenan información
+                  estructurada que es leída por sistemas de bases de datos.</li>
               </ul>
             </li>
+            <li class="card-text"><strong>Acceso y manipulación:</strong> Para acceder y manipular estos archivos, se
+              necesitan programas específicos que conozcan el formato binario del archivo, ya que no se pueden leer ni
+              editar directamente con editores de texto.</li>
           </ul>
-          <p class="card-text">
-            <strong>Acceso y manipulación:</strong> Para acceder y manipular estos archivos, se necesitan programas
-            específicos que conozcan el formato binario del archivo, ya que no se pueden leer ni editar directamente con
-            editores de texto.
-          </p>
-          <p class="card-text">
-            <strong>En resumen:</strong><br>
-            Tanenbaum describe los archivos binarios como aquellos que contienen datos que no son legibles por humanos,
-            sino que deben ser procesados por programas diseñados para entender el formato binario del archivo.
-          </p>
+
+          <p class="card-text"><strong>En resumen:</strong> Tanenbaum describe los archivos binarios como aquellos que
+            contienen datos que no son legibles por humanos, sino que deben ser procesados por programas diseñados para
+            entender el formato binario del archivo.</p>
+
+
           <p class="card-text">
             <strong>Figura 3.</strong>
           </p>
@@ -319,65 +312,49 @@
           <p class="text-center">
             <img class="img-fluid" src="../images/figura_3.png" alt="Figura 3">
           </p>
-          <p class="card-text">
-            <strong>Tanenbaum (2009):</strong><br>
-            La codificación de archivos es un proceso clave en la gestión y manipulación de archivos dentro de los
-            sistemas operativos. En su obra "Sistemas Operativos: Diseño e Implementación", Tanenbaum describe cómo los
-            archivos pueden ser representados de diferentes maneras dependiendo del tipo de datos que contienen y el
-            propósito para el cual se usan. La codificación de archivos puede implicar representar datos de manera
-            eficiente para su almacenamiento o transmisión, y puede involucrar diversos formatos, tanto para archivos de
-            texto como para archivos binarios.
-          </p>
-          <p class="card-text">
-            Según Tanenbaum, los aspectos clave de la codificación de archivos incluyen:
-          </p>
-          <p class="card-text">
-            <strong>Codificación de archivos de texto:</strong><br>
-            ASCII y UTF-8 son ejemplos comunes. En estos casos, los archivos de texto se almacenan utilizando un
-            conjunto de caracteres que pueden ser interpretados como texto legible por humanos. Tanenbaum explica que
-            los sistemas de archivos deben ser capaces de manejar y almacenar estos archivos de manera eficiente,
-            utilizando representaciones de caracteres que sean adecuadas para el sistema.
-          </p>
-          <p class="card-text">
-            <strong>Archivos binarios:</strong><br>
-            Tanenbaum menciona que los archivos binarios son una representación directa de los datos en formato de bits,
-            y no pueden ser interpretados sin el programa adecuado que conozca la estructura interna del archivo. Por
-            ejemplo, los archivos ejecutables o los archivos de imagen están codificados en un formato binario que
-            necesita un programa especializado para ser leído y procesado.
-          </p>
-          <p class="card-text">
-            En este contexto, la codificación binaria es necesaria para representar una amplia variedad de tipos de
-            archivos, tales como:
-          </p>
-          <ul class="card-text">
-            <li>Archivos de imagen.</li>
-            <li>Archivos de audio.</li>
-            <li>Archivos de video.</li>
-          </ul>
-          <p class="card-text">
-            <strong>Compresión de archivos:</strong><br>
-            Tanenbaum también explica la importancia de la compresión de archivos para mejorar la eficiencia del
-            almacenamiento y la transmisión de archivos. Los algoritmos de compresión, como ZIP o gzip, reducen el
-            tamaño de los archivos al eliminar redundancias y representar la información de manera más compacta, sin
-            perder datos esenciales.
-          </p>
-          <p class="card-text">
-            <strong>Codificación de dispositivos:</strong><br>
-            En los sistemas operativos, Tanenbaum menciona cómo algunos tipos de archivos son utilizados para
-            representar dispositivos de hardware, y cómo los sistemas de archivos gestionan la codificación de
-            dispositivos (como archivos de dispositivos de bloques o caracteres) para permitir la comunicación entre el
-            sistema operativo y los periféricos.
-          </p>
-          <p class="card-text">
-            <strong>En resumen:</strong><br>
-            La codificación de archivos es un proceso fundamental que incluye la representación de los archivos en un
-            formato que sea adecuado para su almacenamiento y manipulación por el sistema operativo. Esto involucra:
-          </p>
-          <ul class="card-text">
-            <li>Codificación de caracteres para archivos de texto.</li>
-            <li>Representación binaria para archivos no textuales.</li>
-            <li>Técnicas de compresión para optimizar el uso del espacio.</li>
-          </ul>
+          <p class="card-text"><strong>Tanenbaum (2009)</strong>. La codificación de archivos es un proceso clave en la
+            gestión y manipulación de archivos dentro de los sistemas operativos. En su obra <em>"Sistemas Operativos:
+              Diseño e Implementación"</em>, Tanenbaum describe cómo los archivos pueden ser representados de diferentes
+            maneras dependiendo del tipo de datos que contienen y el propósito para el cual se usan. La codificación de
+            archivos puede implicar representar datos de manera eficiente para su almacenamiento o transmisión, y puede
+            involucrar diversos formatos, tanto para archivos de texto como para archivos binarios.</p>
+
+          <p class="card-text"><strong>Según Tanenbaum, los aspectos clave de la codificación de archivos
+              incluyen</strong></p>
+
+          <p class="card-text"><strong>Codificación de archivos de texto</strong></p>
+          <p class="card-text">ASCII y UTF-8 son ejemplos comunes. En estos casos, los archivos de texto se almacenan
+            utilizando un conjunto de caracteres que pueden ser interpretados como texto legible por humanos. Tanenbaum
+            explica que los sistemas de archivos deben ser capaces de manejar y almacenar estos archivos de manera
+            eficiente, utilizando representaciones de caracteres que sean adecuadas para el sistema.</p>
+
+          <p class="card-text"><strong>Archivos binarios</strong></p>
+          <p class="card-text">Tanenbaum menciona que los archivos binarios son una representación directa de los datos
+            en formato de bits, y no pueden ser interpretados sin el programa adecuado que conozca la estructura interna
+            del archivo. Por ejemplo, los archivos ejecutables o los archivos de imagen están codificados en un formato
+            binario que necesita un programa especializado para ser leído y procesado.</p>
+          <p class="card-text">En este contexto, la codificación binaria es necesaria para representar una amplia
+            variedad de tipos de archivos, tales como archivos de imagen, audio y video, que no son legibles en formato
+            de texto.</p>
+
+          <p class="card-text"><strong>Compresión de archivos</strong></p>
+          <p class="card-text">Tanenbaum también explica la importancia de la compresión de archivos para mejorar la
+            eficiencia del almacenamiento y la transmisión de archivos. Los algoritmos de compresión, como ZIP o gzip,
+            reducen el tamaño de los archivos al eliminar redundancias y representar la información de manera más
+            compacta, sin perder datos esenciales.</p>
+
+          <p class="card-text"><strong>Codificación de dispositivos</strong></p>
+          <p class="card-text">En los sistemas operativos, Tanenbaum menciona cómo algunos tipos de archivos son
+            utilizados para representar dispositivos de hardware, y cómo los sistemas de archivos gestionan la
+            codificación de dispositivos (como archivos de dispositivos de bloques o caracteres) para permitir la
+            comunicación entre el sistema operativo y los periféricos.</p>
+
+          <p class="card-text"><strong>En resumen:</strong> La codificación de archivos es un proceso fundamental que
+            incluye la representación de los archivos en un formato que sea adecuado para su almacenamiento y
+            manipulación por el sistema operativo. Esto involucra codificación de caracteres para archivos de texto,
+            representación binaria para archivos no textuales, y técnicas de compresión para optimizar el uso del
+            espacio.</p>
+
         </div>
       </div>
     </section>

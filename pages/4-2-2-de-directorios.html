@@ -32,23 +32,23 @@
                         Se analizan estos tres esquemas de directorios, sus ventajas, desventajas y aplicaciones.
                     </p>
 
-                    <p class="card-text"><strong>1. Directorios Planos (Simples)</strong></p>
+                    <p class="card-text"><strong>1. Directorios planos (Simples)</strong></p>
                     <p class="card-text">
                         Un directorio plano almacena todos los archivos en una única lista sin subdivisión, común en
                         sistemas antiguos o embebidos.
                     </p>
-                    <p class="card-text"><strong>Características:</strong></p>
+                    <p class="card-text"><strong>Características</strong></p>
                     <ul class="card-text">
                         <li>Estructura lineal: Todos los archivos están en el mismo nivel (Silberschatz et al., 2018, p.
                             485).</li>
                         <li>Sin subdirectorios: No permite organización jerárquica.</li>
                     </ul>
-                    <p class="card-text"><strong>Ventajas:</strong></p>
+                    <p class="card-text"><strong>Ventajas</strong></p>
                     <ul class="card-text">
                         <li>Simplicidad: Fácil implementación y bajo overhead.</li>
                         <li>Acceso rápido: Búsqueda directa sin navegación compleja.</li>
                     </ul>
-                    <p class="card-text"><strong>Desventajas:</strong></p>
+                    <p class="card-text"><strong>Desventajas</strong></p>
                     <ul class="card-text">
                         <li>Limitaciones de escalabilidad: Dificulta la gestión con miles de archivos (Tanenbaum &amp;
                             Bos, 2015, p. 320).</li>
@@ -60,27 +60,27 @@
                         Estructura en árbol con directorios y subdirectorios, utilizada en sistemas modernos (ej.
                         Windows, Linux).
                     </p>
-                    <p class="card-text"><strong>Características:</strong></p>
+                    <p class="card-text"><strong>Características</strong></p>
                     <ul class="card-text">
                         <li>Organización en niveles: Directorios padre-hijo para clasificar archivos (Stallings, 2018,
                             p. 553).</li>
                         <li>Rutas absolutas/relativas: Ejemplo: /home/usuario/documentos.</li>
                     </ul>
-                    <p class="card-text"><strong>Ventajas:</strong></p>
+                    <p class="card-text"><strong>Ventajas</strong></p>
                     <ul class="card-text">
                         <li>Escalabilidad: Soporta millones de archivos.</li>
                         <li>Control de acceso: Permisos por directorio (Silberschatz et al., 2018, p. 487).</li>
                     </ul>
-                    <p class="card-text"><strong>Desventajas:</strong></p>
+                    <p class="card-text"><strong>Desventajas</strong></p>
                     <ul class="card-text">
                         <li>Overhead adicional: Mayor complejidad en búsquedas.</li>
                     </ul>
 
-                    <p class="card-text"><strong>3. Directorios con Tablas Hash</strong></p>
+                    <p class="card-text"><strong>3. Directorios con tablas hash</strong></p>
                     <p class="card-text">
                         Emplean funciones hash para mapear nombres de archivos a ubicaciones, optimizando búsquedas.
                     </p>
-                    <p class="card-text"><strong>Características:</strong></p>
+                    <p class="card-text"><strong>Características</strong></p>
                     <ul class="card-text">
                         <li>Hash → Dirección: Convierte el nombre en un índice para acceso rápido (Tanenbaum &amp; Bos,
                             2015, p. 324).</li>
@@ -90,12 +90,12 @@
                     <ul class="card-text">
                         <li>Tiempo de búsqueda constante (O(1)): Ideal para sistemas con muchos archivos.</li>
                     </ul>
-                    <p class="card-text"><strong>Desventajas:</strong></p>
+                    <p class="card-text"><strong>Desventajas</strong></p>
                     <ul class="card-text">
                         <li>Sobrecarga por colisiones: Degradación del rendimiento si el hash no está optimizado.</li>
                     </ul>
 
-                    <p class="card-text"><strong>Conclusión:</strong></p>
+                    <p class="card-text"><strong>Conclusión</strong></p>
                     <ul class="card-text">
                         <li>Directorios planos: Adecuados para sistemas simples con pocos archivos.</li>
                         <li>Jerárquicos: Estándar en sistemas generalistas por su equilibrio entre orden y rendimiento.
